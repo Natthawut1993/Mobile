@@ -221,6 +221,34 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
   .truthBox,.logicGrid{grid-template-columns:1fr}
   .productStrip{gap:5px}.productTag{font-size:8px;padding:5px 8px}
 }
+
+.altIntro{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;margin-bottom:14px}
+.altDecision{padding:18px;background:linear-gradient(145deg,#0a3025,#0e4b38);color:#fff;border-radius:20px}
+.altDecision small{color:var(--lime);font-weight:900}.altDecision h3{font-size:20px;margin:6px 0}.altDecision p{font-size:11px;color:#c6d9d0;margin:0}
+.altContext{padding:18px;background:#fff;border:1px solid var(--line);border-radius:20px}.altContext b{display:block;font-size:13px}.altContext p{font-size:10px;color:var(--muted);margin:5px 0 0}
+.altGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.altCard{position:relative;padding:18px;background:#fff;border:1px solid var(--line);border-radius:20px}
+.altCard.primary{border:2px solid #9fcdb1;background:#f7fcf8}
+.altHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:11px}
+.altName{font-size:19px;font-weight:900;line-height:1.15}.altType{display:block;color:var(--muted);font-size:9px;font-weight:600;margin-top:4px}
+.altPrice{text-align:right;white-space:nowrap}.altPrice b{display:block;color:var(--green);font-size:17px}.altPrice span{display:block;color:var(--muted);font-size:8px}
+.altFit{font-size:10px;color:#3e554b;margin:0 0 11px}
+.altFeatures{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 12px}
+.altFeature{padding:8px;background:#f4f7f5;border-radius:10px;font-size:9px}.altFeature b{display:block;font-size:9px}.altFeature span{display:block;color:var(--muted);font-size:8px;margin-top:1px}
+.altVerdict{padding-top:10px;border-top:1px dashed var(--line);font-size:10px;color:#40584d}.altVerdict strong{color:var(--ink)}
+.altLink{display:inline-flex;align-items:center;min-height:36px;margin-top:10px;color:var(--green);font-size:9px;font-weight:800}
+.altRank{display:inline-flex;min-height:27px;align-items:center;padding:4px 7px;border-radius:999px;background:#e9f5ec;color:#08704e;font-size:8px;font-weight:900}
+.altRank.premium{background:#eeeaff;color:#5943b8}.altRank.commerce{background:#fff2df;color:#7b5315}
+.compareSummary{margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.compareCell{padding:12px;background:#fff;border:1px solid var(--line);border-radius:14px}.compareCell span{display:block;color:var(--muted);font-size:8px}.compareCell b{display:block;font-size:10px;margin-top:3px}
+.altFoot{margin-top:12px;padding:14px 16px;background:#eef5f0;border-radius:15px;font-size:9px;color:#52675e}
+@media(max-width:600px){
+  .altIntro,.altGrid{grid-template-columns:1fr}
+  .altCard{padding:15px;border-radius:17px}.altHead{display:grid;grid-template-columns:1fr auto}
+  .altFeatures{grid-template-columns:1fr 1fr}
+  .compareSummary{grid-template-columns:1fr 1fr}
+}
+@media(max-width:360px){.altFeatures,.compareSummary{grid-template-columns:1fr}.altHead{grid-template-columns:1fr}.altPrice{text-align:left}}
 @media(max-width:900px){
   .heroGrid,.sectionHead,.demo,.scoreGrid,.costGrid{grid-template-columns:1fr}
   .sectionHead{gap:9px}
@@ -552,6 +580,63 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
   </div>
 </section>
 </main>
+
+<section class="section" id="alternatives">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Alternative Platforms</div><h2>ถ้าไม่ใช้ ZWIZ มีทางเลือกอะไร?</h2></div>
+      <p>เปรียบเทียบเฉพาะแพลตฟอร์มที่ใกล้กับโจทย์ “Facebook/Messenger + LINE OA + Unified Inbox + Automation/AI + Human Handoff” โดยราคาเป็นราคาอ้างอิงจากหน้า Official ณ ตุลาคม 2026</p>
+    </div>
+
+    <div class="altIntro">
+      <div class="altDecision"><small>EXECUTIVE VIEW</small><h3>ZWIZ ยังเหมาะสุดสำหรับ Pilot ที่ต้องการต้นทุนต่ำ</h3><p>แต่ถ้าต้องการ AI Agent และ Automation ที่ลึกขึ้นตั้งแต่วันแรก ให้ดู SleekFlow หรือ respond.io; ถ้าอนาคตเน้นเปิดบิล สต๊อก และ Social Commerce มากกว่า Lead Qualification ให้ดู Page365</p></div>
+      <div class="altContext"><b>วิธีอ่านหน้านี้</b><p>ราคาเทียบเฉพาะแพ็กเกจที่ “ใกล้โจทย์เรา” ไม่ได้หมายความว่าทุกฟีเจอร์เท่ากัน และยังไม่รวม LINE message fees, VAT, onboarding, add-on หรือค่าใช้งานเกิน quota ของแต่ละเจ้า</p></div>
+    </div>
+
+    <div class="altGrid">
+      <article class="altCard primary">
+        <div class="altHead"><div><span class="altRank">แนะนำสำหรับ Pilot</span><div class="altName">ZWIZ.AI<span class="altType">Thai Chatbot + Unified Chat</span></div></div><div class="altPrice"><b>~750฿/เดือน</b><span>Advanced 8,999฿/ปี</span></div></div>
+        <p class="altFit">เหมาะกับโจทย์ปัจจุบัน: Admin 1 คน, Lead จาก Facebook Ads, ต้องการคัดกรองก่อนส่งให้คน และมี LINE OA</p>
+        <div class="altFeatures"><div class="altFeature"><b>Messenger + LINE OA</b><span>เชื่อมช่องทางเข้าแพลตฟอร์ม</span></div><div class="altFeature"><b>Smart Chatbot</b><span>Flow / Tag / Status</span></div><div class="altFeature"><b>Unified Chat</b><span>Admin รับช่วงแชท</span></div><div class="altFeature"><b>AI</b><span>ZPT / Agent เป็นส่วนเพิ่ม</span></div></div>
+        <div class="altVerdict"><strong>เลือกเมื่อ:</strong> ต้องการเริ่มเร็ว ประหยัด และ Support/บริบทตลาดไทยสำคัญ</div>
+        <a class="altLink" href="https://www.zwiz.ai/th/pricing" target="_blank" rel="noopener">ดู Pricing ของ ZWIZ →</a>
+      </article>
+
+      <article class="altCard">
+        <div class="altHead"><div><span class="altRank premium">AI / Automation เด่น</span><div class="altName">SleekFlow<span class="altType">Omnichannel + AI Agent Platform</span></div></div><div class="altPrice"><b>~3,650฿/เดือน</b><span>Pro US$109/mo</span></div></div>
+        <p class="altFit">ทางเลือกที่ใกล้ ZWIZ แต่ระดับ Automation/AI สูงขึ้น: Pro มี AI Agents, Omnichannel Inbox และ Flow Builder พร้อมรองรับ Messenger และ LINE Business</p>
+        <div class="altFeatures"><div class="altFeature"><b>Messenger + LINE</b><span>รองรับทั้งสองช่องทาง</span></div><div class="altFeature"><b>AI Agents</b><span>รวมใน Pro</span></div><div class="altFeature"><b>Flow Builder</b><span>No-code automation</span></div><div class="altFeature"><b>10 Users</b><span>เริ่ม 500 active contacts</span></div></div>
+        <div class="altVerdict"><strong>เลือกเมื่อ:</strong> ยอมเพิ่มงบเพื่อได้ AI Agent + Automation ที่พร้อมโตต่อมากกว่า Pilot แบบประหยัด</div>
+        <a class="altLink" href="https://sleekflow.io/pricing" target="_blank" rel="noopener">ดู Pricing ของ SleekFlow →</a>
+      </article>
+
+      <article class="altCard">
+        <div class="altHead"><div><span class="altRank premium">Power User</span><div class="altName">respond.io<span class="altType">Conversation Management + AI</span></div></div><div class="altPrice"><b>~5,330฿/เดือน</b><span>Growth US$159/mo</span></div></div>
+        <p class="altFit">ครบมากสำหรับ Lead Qualification: รวม LINE + Facebook Messenger, Workflow Automation, AI Agents, Reports และ Developer API ใน Growth</p>
+        <div class="altFeatures"><div class="altFeature"><b>Messenger + LINE</b><span>Official integrations</span></div><div class="altFeature"><b>AI Agents</b><span>Lead qualification / FAQ</span></div><div class="altFeature"><b>Workflows</b><span>Routing + Automation</span></div><div class="altFeature"><b>Developer API</b><span>พร้อมต่อระบบภายหลัง</span></div></div>
+        <div class="altVerdict"><strong>เลือกเมื่อ:</strong> ต้องการแพลตฟอร์มที่จริงจังกับ Automation/API ตั้งแต่ต้น และงบไม่ใช่ข้อจำกัดหลัก</div>
+        <a class="altLink" href="https://respond.io/pricing" target="_blank" rel="noopener">ดู Pricing ของ respond.io →</a>
+      </article>
+
+      <article class="altCard">
+        <div class="altHead"><div><span class="altRank commerce">Social Commerce</span><div class="altName">Page365<span class="altType">Thai Social Commerce Platform</span></div></div><div class="altPrice"><b>799–1,499฿/เดือน</b><span>Solo / Pro</span></div></div>
+        <p class="altFit">รวม Facebook + LINE OA + Instagram ได้และมี Tag/FAQ Chatbot; จุดเด่นไปทางเปิดบิล ชำระเงิน สต๊อก และ Social Commerce มากกว่า AI Lead Agent</p>
+        <div class="altFeatures"><div class="altFeature"><b>Messenger + LINE OA</b><span>รวมแชทในที่เดียว</span></div><div class="altFeature"><b>Customer Tags</b><span>Solo 6 / Pro 50 tags</span></div><div class="altFeature"><b>FAQ Chatbot</b><span>ตอบคำถามยอดฮิต</span></div><div class="altFeature"><b>Order / Stock</b><span>จุดแข็งของแพลตฟอร์ม</span></div></div>
+        <div class="altVerdict"><strong>เลือกเมื่อ:</strong> Roadmap จะไปทางรับ Order/เปิดบิล/Stock/Marketplace มากกว่าการทำ AI Lead Qualification</div>
+        <a class="altLink" href="https://www.page365.net/pricing" target="_blank" rel="noopener">ดู Pricing ของ Page365 →</a>
+      </article>
+    </div>
+
+    <div class="compareSummary" aria-label="สรุปการเลือกแพลตฟอร์ม">
+      <div class="compareCell"><span>ประหยัด / เริ่ม Pilot</span><b>① ZWIZ</b></div>
+      <div class="compareCell"><span>AI + Automation</span><b>② SleekFlow</b></div>
+      <div class="compareCell"><span>Automation + API ระดับสูง</span><b>③ respond.io</b></div>
+      <div class="compareCell"><span>Social Commerce / Order</span><b>④ Page365</b></div>
+    </div>
+
+    <div class="altFoot"><b>หมายเหตุราคา:</b> SleekFlow และ respond.io แปลงเป็นเงินบาทเพื่อให้เห็นขนาดงบโดยใช้อัตราอ้างอิงประมาณ 1 USD = 33.5 THB ณ 4 ต.ค. 2026 จึงควรดูราคา USD จริงอีกครั้งตอนอนุมัติซื้อ · ManyChat ไม่ถูกจัดเป็นตัวเลือกหลักในหน้านี้ เพราะแพ็กเกจปัจจุบันไม่ได้ระบุ LINE เป็น Channel ที่รองรับ จึงไม่ตรงกับ Architecture Messenger + LINE OA ของเรา</div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container"><b>Dealer Lead System — Executive Proposal</b><br>อ้างอิงความสามารถจากหน้า Chatbot, User Manual และ Pricing ของ ZWIZ.AI · หน้าจอใน Proposal เป็น Concept Prototype ไม่ใช่ Screenshot UI จริง · Pilot เสนอใช้ Tag/Status แทนคะแนนตัวเลข · การเชื่อม LINE OA และ Add-on ควรยืนยันขั้นตอน/แพ็กเกจกับ ZWIZ ก่อนใช้งานจริง<br><a href="https://www.zwiz.ai/th/chatbot" target="_blank" rel="noopener">ZWIZ Chatbot</a> · <a href="https://zwiz.ai/th/usermanual" target="_blank" rel="noopener">User Manual</a> · <a href="https://www.zwiz.ai/th/pricing" target="_blank" rel="noopener">Pricing</a></div>
