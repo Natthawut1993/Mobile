@@ -197,6 +197,30 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
 .decision p{margin:5px 0 0;color:var(--muted);font-size:11px}
 .footer{padding:26px 0;background:#061c15;color:#a9bdb4;font-size:9px}
 .footer b{color:#fff}
+
+.productStrip{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+.productTag{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#40564c;font-size:9px;font-weight:800}
+.productTag strong{color:var(--ink)}
+.productTag.zw{background:#f0edff;border-color:#ddd6ff;color:#5541b4}
+.productTag.meta{background:#eaf2ff;border-color:#d5e4fb;color:#145caf}
+.productTag.line{background:#e9faee;border-color:#d2efd9;color:#08743c}
+.productTag.nocode{background:#edf7ef;border-color:#d4e8d9;color:#086946}
+.productTag.optional{background:#fff4e5;border-color:#f2dfc2;color:#795116}
+.archGrid{display:grid;grid-template-columns:1fr;gap:10px}
+.archRow{display:grid;grid-template-columns:155px 1fr 180px;gap:14px;align-items:center;padding:15px 16px;background:#fff;border:1px solid var(--line);border-radius:17px}
+.archProduct{font-size:12px;font-weight:900}.archProduct small{display:block;color:var(--muted);font-size:9px;font-weight:600;margin-top:2px}
+.archWork b{display:block;font-size:12px}.archWork span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.archBuild{text-align:right}.archBuild b{display:block;font-size:10px}.archBuild span{display:block;color:var(--muted);font-size:9px;margin-top:2px}
+.truthBox{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.truth{padding:16px;border-radius:17px;border:1px solid var(--line);background:#fff}.truth h3{font-size:15px;margin:0 0 6px}.truth p{font-size:11px;color:var(--muted);margin:0}
+.logicGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.logicCard{padding:17px;background:#fff;border:1px solid var(--line);border-radius:18px}.logicCard h3{font-size:17px;margin:9px 0 5px}.logicCard p{font-size:10px;color:var(--muted);margin:0}.logicRule{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:10px;color:#3d554a}
+.implNote{margin-top:12px;padding:14px 16px;border-left:4px solid var(--green);background:#edf7ef;border-radius:0 14px 14px 0;font-size:11px;color:#3f5c4f}
+@media(max-width:600px){
+  .archRow{grid-template-columns:1fr;gap:7px;padding:13px}.archBuild{text-align:left;padding-top:7px;border-top:1px dashed var(--line)}
+  .truthBox,.logicGrid{grid-template-columns:1fr}
+  .productStrip{gap:5px}.productTag{font-size:8px;padding:5px 8px}
+}
 @media(max-width:900px){
   .heroGrid,.sectionHead,.demo,.scoreGrid,.costGrid{grid-template-columns:1fr}
   .sectionHead{gap:9px}
@@ -253,7 +277,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
   <div class="container nav">
     <a class="brand" href="#top"><span class="mark" aria-hidden="true">AI</span><span>Dealer Lead System</span></a>
     <nav class="navlinks" aria-label="สารบัญ">
-      <a href="#flow">แนวทาง</a><a href="#admin">Admin</a><a href="#cost">ค่าใช้จ่าย</a><a class="cta" href="#pilot">สรุป Pilot</a>
+      <a href="#flow">Flow</a><a href="#implementation">เครื่องมือ</a><a href="#admin">Admin</a><a href="#cost">ค่าใช้จ่าย</a><a class="cta" href="#pilot">สรุป Pilot</a>
     </nav>
   </div>
 </header>
@@ -277,7 +301,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
       <div class="execList">
         <div class="execItem"><i aria-hidden="true">01</i><div><b>รวมแชทไว้จุดเดียว</b><span>Messenger + LINE OA ลดการสลับหลายหน้าจอ</span></div></div>
         <div class="execItem"><i aria-hidden="true">02</i><div><b>คัด Hot / Warm / Cold</b><span>ใช้ประเภทลูกค้า ปริมาณ พื้นที่ และความพร้อมซื้อ</span></div></div>
-        <div class="execItem"><i aria-hidden="true">03</i><div><b>Admin ทำเฉพาะงานที่ต้องใช้คน</b><span>ราคา ต่อรอง เงื่อนไข และปิด First Order</span></div></div>
+        <div class="execItem"><i aria-hidden="true">03</i><div><b>Pilot ไม่ต้องเขียนระบบเอง</b><span>ใช้ Facebook + LINE OA + ฟีเจอร์ใน ZWIZ เป็นหลัก แล้วให้ Admin ปิดการขาย</span></div></div>
       </div>
     </aside>
   </div>
@@ -314,9 +338,55 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
   </div>
 </section>
 
+<section class="section white" id="implementation">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Product Architecture</div><h2>แต่ละหน้าที่เห็น ใช้ Product อะไร</h2></div>
+      <p>นี่คือส่วนที่ทำให้ Proposal จาก “แนวคิด” กลายเป็นแผนใช้งานจริง: ใน Pilot เราเน้นการตั้งค่า Product ที่มีอยู่แล้ว ไม่สร้าง CRM หรือ Lead System ใหม่เอง</p>
+    </div>
+    <div class="archGrid">
+      <div class="archRow">
+        <div class="archProduct">Meta Ads Manager<small>Product: Meta</small></div>
+        <div class="archWork"><b>สร้าง Click-to-Messenger Ads</b><span>ลูกค้าเห็นโฆษณาและกดเริ่มแชทใน Messenger ตามปกติ</span></div>
+        <div class="archBuild"><b>ตั้งค่าใน Meta</b><span>ไม่เขียนโค้ด</span></div>
+      </div>
+      <div class="archRow">
+        <div class="archProduct">Facebook Messenger<small>Product: Meta</small></div>
+        <div class="archWork"><b>หน้าจอแชทที่ลูกค้าเห็น</b><span>เชื่อม Facebook Page เข้ากับ ZWIZ แล้วให้ ZWIZ Bot รับข้อความและเริ่ม Flow</span></div>
+        <div class="archBuild"><b>เชื่อมสิทธิ์ Page</b><span>ZWIZ จัดการ Bot Flow</span></div>
+      </div>
+      <div class="archRow">
+        <div class="archProduct">ZWIZ Chatbot<small>Smart Chatbot Flow</small></div>
+        <div class="archWork"><b>ถาม 4 ข้อ + เก็บคำตอบ + ติด Tag/Status</b><span>เช่น Dealer-Type: Wholesale, Qty: 50+, Province: Chonburi, Status: HOT</span></div>
+        <div class="archBuild"><b>ตั้งค่าใน ZWIZ</b><span>ไม่ต้องมี Backend ของเรา</span></div>
+      </div>
+      <div class="archRow">
+        <div class="archProduct">Zignal / All-in-one Chat<small>Product: ZWIZ</small></div>
+        <div class="archWork"><b>หน้าจอทำงานของ Admin</b><span>รวม FB + LINE + IG, ค้นหาจาก Tag/Status, ดูข้อมูลลูกค้าและรับช่วงจาก Bot</span></div>
+        <div class="archBuild"><b>Admin ใช้ทุกวัน</b><span>Desktop / Mobile</span></div>
+      </div>
+      <div class="archRow">
+        <div class="archProduct">LINE Official Account<small>Product: LINE</small></div>
+        <div class="archWork"><b>ช่องทางดูแล Dealer หลังผ่านการคัดกรอง</b><span>เชื่อม LINE OA เข้า ZWIZ ผ่าน Social Connect / Messaging API ตามขั้นตอนของ ZWIZ</span></div>
+        <div class="archBuild"><b>เชื่อม Account</b><span>ไม่สร้าง LINE Bot Server เอง</span></div>
+      </div>
+      <div class="archRow">
+        <div class="archProduct">ZPT / AI Agent<small>Product: ZWIZ · Optional</small></div>
+        <div class="archWork"><b>ตอบ FAQ / สรุปบทสนทนาให้ฉลาดขึ้น</b><span>ค่อยเพิ่มหลัง Pilot เมื่อรู้ว่าคำถามซ้ำอะไรสร้างภาระให้ Admin จริง</span></div>
+        <div class="archBuild"><b>Phase 2</b><span>ตรวจแพ็กเกจ/Add-on ก่อน</span></div>
+      </div>
+    </div>
+    <div class="truthBox">
+      <div class="truth"><h3>✓ Pilot: จบใน ZWIZ ได้เป็นหลัก</h3><p>Flow, เก็บข้อมูล, Tag/Status, Follow-up, All-in-one Chat และ Handoff ใช้ความสามารถของ ZWIZ โดยไม่ต้องสร้างระบบ Lead Management ใหม่</p></div>
+      <div class="truth"><h3>✦ Custom Code: ยังไม่จำเป็น</h3><p>จะเริ่มมีเหตุผลเมื่อเราต้องการคะแนนตัวเลขซับซ้อน, เชื่อม ERP/ราคา/Stock แบบ Real-time หรือทำ Logic ที่ ZWIZ ตั้งค่าไม่ได้</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="section white">
   <div class="container demo">
     <div>
+      <div class="productStrip"><span class="productTag meta"><strong>หน้าที่เห็น:</strong> Facebook Messenger</span><span class="productTag zw"><strong>Logic:</strong> ZWIZ Smart Chatbot Flow</span><span class="productTag nocode">ไม่ต้องเขียนโค้ด</span></div>
       <div class="kicker">Customer Experience</div>
       <h2>ลูกค้าเจอคำถามสั้น ๆ ไม่ใช่แบบฟอร์มยาว</h2>
       <div class="qual">
@@ -342,7 +412,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
           </div>
         </div>
       </div>
-      <div class="caption">Concept Prototype — ใช้สื่อ Workflow ไม่ใช่ Screenshot UI จริงของผู้ให้บริการ</div>
+      <div class="caption">Concept Prototype — Messenger คือหน้าลูกค้า; Logic ด้านหลังตั้งค่าใน ZWIZ</div>
     </div>
   </div>
 </section>
@@ -350,28 +420,22 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
 <section class="section">
   <div class="container">
     <div class="sectionHead">
-      <div><div class="kicker">Lead Priority</div><h2>ระบบช่วยบอกว่าใครควรคุยก่อน</h2></div>
-      <p>ตัวอย่างคะแนนนี้มีไว้สื่อหลักการ หลัง Pilot ต้องปรับจากข้อมูล Quotation และ First Order จริง ไม่ควรใช้เป็นสูตรถาวรตั้งแต่วันแรก</p>
+      <div><div class="kicker">Qualification Logic</div><h2>HOT / WARM / COLD อยู่ที่ไหนในระบบ?</h2></div>
+      <p>ใน Pilot ไม่จำเป็นต้องมี “Lead Score 95/100” แบบระบบที่เขียนเอง เราใช้คำตอบจาก Smart Flow ให้ ZWIZ ติด Tag และ Status ซึ่ง Admin สามารถค้นหาและจัดกลุ่มลูกค้าได้จริง</p>
     </div>
-    <div class="scoreGrid">
-      <div class="choicePanel">
-        <div class="choiceGroup"><span>ประเภทธุรกิจ</span><div class="choices" data-group><button class="choice" aria-pressed="true" data-score="30">ร้านขายส่ง +30</button><button class="choice" aria-pressed="false" data-score="25">ร้านค้าปลีก +25</button><button class="choice" aria-pressed="false" data-score="8">บุคคลทั่วไป +8</button></div></div>
-        <div class="choiceGroup"><span>ปริมาณครั้งแรก</span><div class="choices" data-group><button class="choice" aria-pressed="false" data-score="12">6–20 ลัง +12</button><button class="choice" aria-pressed="false" data-score="25">21–50 ลัง +25</button><button class="choice" aria-pressed="true" data-score="30">50+ ลัง +30</button></div></div>
-        <div class="choiceGroup"><span>ความพร้อมซื้อ</span><div class="choices" data-group><button class="choice" aria-pressed="true" data-score="25">ภายใน 7 วัน +25</button><button class="choice" aria-pressed="false" data-score="10">ภายใน 1 เดือน +10</button><button class="choice" aria-pressed="false" data-score="0">ศึกษาข้อมูล</button></div></div>
-        <div class="choiceGroup"><span>Intent</span><div class="choices" data-group><button class="choice" aria-pressed="true" data-score="15">ขอราคา +15</button><button class="choice" aria-pressed="false" data-score="5">ขอข้อมูล +5</button></div></div>
-      </div>
-      <div class="scoreCard" aria-live="polite">
-        <div class="ring" id="ring"><b id="score">100</b></div>
-        <h3 id="status">HOT LEAD</h3>
-        <p id="reason">มีหลายสัญญาณพร้อมซื้อ ควรให้ Admin รับช่วงก่อน</p>
-        <span class="statusText" id="next">ลำดับงาน: ติดต่อก่อน</span>
-      </div>
+    <div class="productStrip"><span class="productTag zw"><strong>Product:</strong> ZWIZ Chatbot</span><span class="productTag zw"><strong>Feature:</strong> Tag + Status + Smart Flow</span><span class="productTag nocode">Pilot: ไม่ต้องเขียนโค้ด</span></div>
+    <div class="logicGrid">
+      <article class="logicCard"><span class="badge hot">● HOT</span><h3>ส่งให้ Admin ก่อน</h3><p>ตัวอย่าง: ร้านขายส่ง + 50+ ลัง + พร้อมภายใน 7 วัน + ขอราคา</p><div class="logicRule"><b>ZWIZ ทำอะไร:</b> Flow ติด Status = HOT และ Tags ตามคำตอบ เพื่อให้ Admin ค้นหา/แยกกลุ่ม</div></article>
+      <article class="logicCard"><span class="badge warm">● WARM</span><h3>Follow-up ต่อ</h3><p>ตัวอย่าง: สนใจ 6–20 ลัง หรือพร้อมภายใน 1 เดือน แต่ยังต้องการข้อมูลเพิ่ม</p><div class="logicRule"><b>ZWIZ ทำอะไร:</b> ติด Status = WARM และใช้ Follow-up / Broadcast ตามเงื่อนไขที่เหมาะสม</div></article>
+      <article class="logicCard"><span class="badge" style="background:#edf0ef;color:#596861">● COLD</span><h3>Bot ดูแลก่อน</h3><p>ตัวอย่าง: ยังศึกษาข้อมูล ปริมาณน้อย และยังไม่มีช่วงเวลาที่พร้อมเริ่ม</p><div class="logicRule"><b>ZWIZ ทำอะไร:</b> เก็บ Tag/Status ไว้ ไม่ดันขึ้นคิวเร่งด่วนของ Admin</div></article>
     </div>
+    <div class="implNote"><b>แล้ว Lead Score 95 ที่เห็นก่อนหน้านี้ล่ะ?</b> นั่นคือ Concept เพื่ออธิบายการจัดลำดับ ไม่ใช่หน้ามาตรฐานที่ยืนยันว่ามีใน ZWIZ เราจึงเปลี่ยน Proposal ให้ใช้ <b>Tag/Status ซึ่ง ZWIZ รองรับจริง</b> ก่อน หากอนาคตต้องการคะแนนตัวเลขค่อยประเมิน Custom Logic/API เป็น Phase 2</div>
   </div>
 </section>
 
 <section class="section white" id="admin">
   <div class="container">
+    <div class="productStrip"><span class="productTag zw"><strong>หน้าที่ใช้:</strong> Zignal / ZWIZ All-in-one Chat</span><span class="productTag zw"><strong>ข้อมูล:</strong> Tag + Status + Customer info</span><span class="productTag nocode">Admin ใช้ได้โดยไม่สร้าง Dashboard เอง</span></div>
     <div class="sectionHead">
       <div><div class="kicker">Admin Experience</div><h2>Admin เห็น “สิ่งที่ต้องตัดสินใจ” ทันที</h2></div>
       <p>หน้าจอไม่ควรโชว์ข้อมูลเยอะเพียงเพราะมีข้อมูล แต่ต้องตอบ 4 คำถาม: ลูกค้าเป็นใคร? มาจากไหน? ต้องการเท่าไร? และเราควรทำอะไรต่อ?</p>
@@ -386,7 +450,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
           <div class="leadRow"><div class="leadAvatar">น</div><div><b>นัท ออนไลน์</b><small>6–20 ลัง · กรุงเทพฯ</small></div><span class="badge warm">WARM</span></div>
         </div>
         <div class="conversation">
-          <div class="convHead"><div><b>สมชาย ค้าส่ง</b><small>Messenger · Ads: Dealer-East</small></div><span class="badge hot">● HOT 95</span></div>
+          <div class="convHead"><div><b>สมชาย ค้าส่ง</b><small>Messenger · Ads: Dealer-East</small></div><span class="badge hot">● HOT</span></div>
           <div class="convBody">
             <div class="summary"><b>Lead Summary</b><br>ร้านขายส่งในชลบุรี · สนใจ 50+ ลัง · พร้อมเริ่มภายใน 7 วัน · ขอราคาตัวแทนและเงื่อนไขจัดส่ง</div>
             <div class="bubble user">สนใจสมัครตัวแทนครับ</div>
@@ -394,7 +458,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
           </div>
           <div class="compose"><input aria-label="ข้อความตอบลูกค้า" value="สวัสดีครับ ผมฝ่ายขาย เห็นว่าคุณสนใจรับ 50+ ลัง..."><button>ส่ง</button></div>
         </div>
-        <aside class="profile"><h3>Lead Profile</h3><div class="bigScore">95</div><span class="badge source">Messenger</span><div class="kv"><span>ประเภท</span><b>ร้านขายส่ง</b></div><div class="kv"><span>ปริมาณ</span><b>50+ ลัง</b></div><div class="kv"><span>จังหวัด</span><b>ชลบุรี</b></div><div class="kv"><span>พร้อมเริ่ม</span><b>≤ 7 วัน</b></div></aside>
+        <aside class="profile"><h3>Lead Profile</h3><div style="margin-bottom:8px"><span class="badge hot">● STATUS: HOT</span></div><span class="badge source">Messenger</span><div class="kv"><span>ประเภท</span><b>ร้านขายส่ง</b></div><div class="kv"><span>ปริมาณ</span><b>50+ ลัง</b></div><div class="kv"><span>จังหวัด</span><b>ชลบุรี</b></div><div class="kv"><span>พร้อมเริ่ม</span><b>≤ 7 วัน</b></div></aside>
       </div>
     </div>
 
@@ -405,7 +469,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
           <div class="priority">
             <div class="priorityLabel">PRIORITY #1</div>
             <article class="hotLead">
-              <div class="hotLeadTop"><div class="leadAvatar">ส</div><div><b>สมชาย ค้าส่ง</b><small>Messenger · Dealer-East</small></div><span class="badge hot">● HOT 95</span></div>
+              <div class="hotLeadTop"><div class="leadAvatar">ส</div><div><b>สมชาย ค้าส่ง</b><small>Messenger · Dealer-East</small></div><span class="badge hot">● HOT</span></div>
               <div class="mobileSummary"><b>สรุป:</b> ร้านขายส่ง ชลบุรี · 50+ ลัง · พร้อมภายใน 7 วัน · ต้องการราคาและค่าจัดส่ง</div>
               <div class="mobileFacts"><div class="mobileFact"><span>ประเภท</span><b>ร้านขายส่ง</b></div><div class="mobileFact"><span>ปริมาณ</span><b>50+ ลัง</b></div><div class="mobileFact"><span>พื้นที่</span><b>ชลบุรี</b></div><div class="mobileFact"><span>พร้อมเริ่ม</span><b>≤ 7 วัน</b></div></div>
               <div class="mobileActions"><button class="primary">รับเคส</button><button>ส่งราคา</button></div>
@@ -414,7 +478,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
           <div class="queue"><b>คิวถัดไป</b><div class="queueRow"><span>พรทิพย์ มินิมาร์ท · ระยอง</span><span>WARM</span></div><div class="queueRow"><span>นัท ออนไลน์ · กรุงเทพฯ</span><span>WARM</span></div></div>
         </div>
       </div>
-      <div class="caption">Mobile-first: ไม่มีตารางกว้างและไม่มีรายการที่บังคับปัดแนวนอน</div>
+      <div class="caption">Concept ของหน้าทำงาน Admin โดยอิง ZWIZ All-in-one Chat / Tag / Status — UI จริงอาจต่างจากภาพนี้</div>
     </div>
   </div>
 </section>
@@ -426,8 +490,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
       <p>Messenger ใช้หา Lead ใหม่ ส่วน LINE OA ใช้สร้างความสัมพันธ์หลังผ่านการคัดกรองแล้ว เพื่อลดฐานเพื่อนที่ไม่มีคุณภาพ</p>
     </div>
     <div class="channelGrid">
-      <article class="channel"><span class="badge source">ACQUISITION</span><h3>Facebook Messenger</h3><p>Ads → เริ่มแชท → Qualification → รู้ Source → ส่ง Hot/Warm ให้ Admin</p></article>
-      <article class="channel"><span class="badge" style="background:#e7faed;color:#08733c">RETENTION</span><h3>LINE Official Account</h3><p>ราคาตัวแทน · โปรโมชั่น · สั่งซ้ำ · สถานะจัดส่ง · ติดต่อฝ่ายขาย</p></article>
+      <article class="channel"><div class="productStrip"><span class="productTag meta">Meta Product</span><span class="productTag zw">เชื่อม ZWIZ</span></div><span class="badge source">ACQUISITION</span><h3>Facebook Messenger</h3><p>Ads → เริ่มแชท → Qualification → รู้ Source → ส่ง Hot/Warm ให้ Admin</p></article>
+      <article class="channel"><div class="productStrip"><span class="productTag line">LINE OA</span><span class="productTag zw">เชื่อม ZWIZ</span></div><span class="badge" style="background:#e7faed;color:#08733c">RETENTION</span><h3>LINE Official Account</h3><p>ราคาตัวแทน · โปรโมชั่น · สั่งซ้ำ · สถานะจัดส่ง · ติดต่อฝ่ายขาย</p></article>
     </div>
   </div>
 </section>
@@ -436,7 +500,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
   <div class="container">
     <div class="sectionHead">
       <div><div class="kicker">Tool Stack</div><h2>ใช้เครื่องมืออะไร และทำหน้าที่อะไร</h2></div>
-      <p>เริ่มด้วยระบบสำเร็จรูปก่อน เพื่อพิสูจน์ Funnel แล้วค่อยพิจารณา Generative AI, ERP Integration หรือ Marketplace ภายหลัง</p>
+      <p>ภาพรวม Pilot ใช้การ “เชื่อม Account + ตั้งค่า Flow” เป็นหลัก ไม่ต้องมี Server, Database หรือ Dashboard ที่เราเขียนเอง เว้นแต่ภายหลังต้องต่อ ERP/Stock/Price แบบ Real-time</p>
     </div>
     <div class="tools">
       <div class="tool"><div class="toolIcon fb">ADS</div><b>Meta Ads</b><span>สร้าง Demand และ Lead</span></div>
@@ -453,7 +517,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
   <div class="container">
     <div class="sectionHead">
       <div><div class="kicker">Cost Model</div><h2>เริ่มต้นเล็ก แล้วเพิ่มเมื่อเห็น ROI</h2></div>
-      <p>ไม่จำเป็นต้องซื้อ Generative AI ตั้งแต่วันแรก เพราะ Qualification 4 ข้อสามารถทำด้วย Flow ได้ตรงกว่าและควบคุมต้นทุนง่ายกว่า</p>
+      <p>ข้อเสนอเริ่มที่ ZWIZ Advanced 8,999 บาท/ปีตามหน้า Pricing ปัจจุบัน และยังไม่ซื้อ Generative AI ตั้งแต่วันแรก เพราะ Qualification, Tag/Status และ All-in-one Chat ใช้ฟีเจอร์แพลตฟอร์มเป็นแกนก่อน</p>
     </div>
     <div class="costGrid">
       <div class="prices">
@@ -479,7 +543,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
       <p>Pilot 30 วันเพื่อพิสูจน์ว่า Lead Quality ดีขึ้น Admin ใช้เวลาน้อยลง และ Ads สามารถสร้าง First Order ได้คุ้มขึ้นหรือไม่</p>
     </div>
     <div class="roadmap">
-      <article class="phase"><small>DAY 1–7</small><h3>Setup</h3><ul><li>เชื่อม Messenger + LINE OA</li><li>สร้าง Qualification 4 ข้อ</li><li>ตั้ง Hot / Warm / Cold</li><li>กำหนด Handoff</li></ul></article>
+      <article class="phase"><small>DAY 1–7</small><h3>Connect + Configure</h3><ul><li>อนุญาต Facebook Page ให้ ZWIZ</li><li>เชื่อม LINE OA ผ่าน Social Connect / Messaging API</li><li>สร้าง Smart Flow 4 ข้อใน ZWIZ</li><li>ตั้ง Tag / Status / Handoff</li></ul></article>
       <article class="phase"><small>DAY 8–21</small><h3>Run</h3><ul><li>เปิด Ads 1–2 ชุด</li><li>เก็บ Source และ Outcome</li><li>ดู FAQ ที่เกิดซ้ำ</li><li>ปรับ Flow จากข้อมูลจริง</li></ul></article>
       <article class="phase"><small>DAY 22–30</small><h3>Decide</h3><ul><li>วัด Qualified → Quotation</li><li>วัด Hot → First Order</li><li>วัดเวลาที่ Admin ใช้</li><li>ตัดสินใจเพิ่ม AI หรือไม่</li></ul></article>
     </div>
@@ -490,30 +554,9 @@ button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3p
 </main>
 
 <footer class="footer">
-  <div class="container"><b>Dealer Lead System — Executive Proposal</b><br>Concept Prototype สำหรับอธิบายแนวทางเท่านั้น ไม่ใช่ Screenshot UI จริงของ ZWIZ · Lead Score เป็นตัวอย่าง · ราคาและเงื่อนไขควรยืนยันกับผู้ให้บริการก่อนซื้อจริง</div>
+  <div class="container"><b>Dealer Lead System — Executive Proposal</b><br>อ้างอิงความสามารถจากหน้า Chatbot, User Manual และ Pricing ของ ZWIZ.AI · หน้าจอใน Proposal เป็น Concept Prototype ไม่ใช่ Screenshot UI จริง · Pilot เสนอใช้ Tag/Status แทนคะแนนตัวเลข · การเชื่อม LINE OA และ Add-on ควรยืนยันขั้นตอน/แพ็กเกจกับ ZWIZ ก่อนใช้งานจริง<br><a href="https://www.zwiz.ai/th/chatbot" target="_blank" rel="noopener">ZWIZ Chatbot</a> · <a href="https://zwiz.ai/th/usermanual" target="_blank" rel="noopener">User Manual</a> · <a href="https://www.zwiz.ai/th/pricing" target="_blank" rel="noopener">Pricing</a></div>
 </footer>
 
-<script>
-document.querySelectorAll('[data-group]').forEach(group=>{
-  group.querySelectorAll('.choice').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      group.querySelectorAll('.choice').forEach(x=>x.setAttribute('aria-pressed','false'));
-      btn.setAttribute('aria-pressed','true');
-      calculate();
-    });
-  });
-});
-function calculate(){
-  const selected=[...document.querySelectorAll('.choice[aria-pressed="true"]')];
-  const total=selected.reduce((sum,b)=>sum+Number(b.dataset.score||0),0);
-  const ring=document.getElementById('ring'),score=document.getElementById('score');
-  const status=document.getElementById('status'),reason=document.getElementById('reason'),next=document.getElementById('next');
-  score.textContent=total; ring.style.setProperty('--p',Math.min(total,100)+'%');
-  if(total>=70){status.textContent='HOT LEAD';reason.textContent='มีหลายสัญญาณพร้อมซื้อ ควรให้ Admin รับช่วงก่อน';next.textContent='ลำดับงาน: ติดต่อก่อน';}
-  else if(total>=40){status.textContent='WARM LEAD';reason.textContent='มีความสนใจ แต่ควร Follow-up หรือให้ข้อมูลเพิ่ม';next.textContent='ลำดับงาน: Follow-up';}
-  else{status.textContent='COLD LEAD';reason.textContent='ยังไม่พร้อมซื้อ ให้ระบบดูแลข้อมูลพื้นฐานต่อ';next.textContent='ลำดับงาน: Automation ดูแล';}
-}
-calculate();
-</script>
+
 </body>
 </html>
