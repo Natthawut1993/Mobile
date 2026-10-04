@@ -3,56 +3,517 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071b15">
-<title>Dealer Lead System — Executive Presentation</title>
-<meta name="description" content="แนวทางรวม Facebook Messenger + LINE OA + ZWIZ.AI เพื่อคัดกรองตัวแทนจำหน่ายน้ำมันพืชสำหรับ Admin 1 คน">
+<meta name="theme-color" content="#0b3327">
+<title>Dealer Lead System — Executive Proposal</title>
+<meta name="description" content="ข้อเสนอระบบคัดกรอง Lead ตัวแทนจำหน่ายน้ำมันพืชจาก Facebook Ads สู่ Messenger, ZWIZ และ LINE OA">
 <style>
-:root{--g:#0d7a55;--g2:#16a46f;--lime:#b7e36e;--deep:#071b15;--ink:#102018;--muted:#65756d;--paper:#f7faf7;--soft:#eef6ef;--line:#06c755;--fb:#1877f2;--red:#d94a47;--warm:#e99a3f;--purple:#6d55df;--card:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-snap-type:y mandatory;background:var(--deep);-webkit-text-size-adjust:100%}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Tahoma",sans-serif;color:var(--ink);background:var(--deep);overflow-x:hidden}h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.02em}p{line-height:1.6}button{font:inherit}.progress{position:fixed;z-index:1000;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--lime),var(--g2))}
-.top{position:fixed;z-index:990;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;gap:8px;pointer-events:none}.brand,.tools button{pointer-events:auto;background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(12px);box-shadow:0 8px 26px rgba(0,0,0,.1)}.brand{display:flex;align-items:center;gap:9px;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:800}.brand i{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--g),var(--lime));display:grid;place-items:center;color:#fff;font-style:normal}.tools{display:flex;gap:6px}.tools button{border-radius:999px;padding:9px 12px;color:#263d33;cursor:pointer}
-.slide{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;padding:82px 6vw 54px;overflow:hidden}.dark{background:radial-gradient(circle at 15% 10%,#174c36 0,#0b2b20 36%,#071b15 75%);color:#fff}.light{background:var(--paper)}.soft{background:linear-gradient(140deg,#eef7f0,#fff 55%,#f4f0e4)}.wrap{width:min(1320px,100%);margin:auto;position:relative;z-index:2}.ey{display:inline-flex;padding:6px 9px;border-radius:999px;background:rgba(13,122,85,.08);border:1px solid rgba(13,122,85,.14);color:var(--g);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.dark .ey{color:var(--lime);background:rgba(183,227,110,.08);border-color:rgba(183,227,110,.18)}
-h1{font-size:clamp(44px,6.2vw,86px);line-height:.98;margin-top:14px}h2{font-size:clamp(32px,4.2vw,58px);line-height:1.08;margin-top:12px}h3{font-size:20px}.lead{font-size:clamp(17px,1.8vw,24px);max-width:930px;color:#4e655b;margin:14px 0 22px}.dark .lead{color:#c6d8cf}.accent{color:var(--g2)}.dark .accent{color:var(--lime)}.small{font-size:12px;color:var(--muted);line-height:1.55}.dark .small{color:#a7beb3}
-.g2{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:rgba(255,255,255,.94);border:1px solid rgba(24,72,51,.08);border-radius:22px;padding:20px;box-shadow:0 15px 50px rgba(19,62,44,.08)}.dark .card{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.11);box-shadow:none}.card p{margin:7px 0 0;color:#62736a;font-size:13px}.dark .card p{color:#bed1c7}.metric{font-size:33px;font-weight:900;color:var(--g)}.dark .metric{color:var(--lime)}.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800;background:#e9f6ed;color:#0b714e}.hot{background:#feeceb;color:#ac302d}.warm{background:#fff4e6;color:#9e631d}.cold{background:#eef1f0;color:#68756f}.fb{background:#eaf2ff;color:#1261c9}.line{background:#e6faea;color:#087f3c}
-.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}.node{position:relative;min-height:122px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);padding:15px;display:flex;flex-direction:column;justify-content:space-between}.node:not(:last-child):after{content:"→";position:absolute;right:-17px;top:48%;z-index:3;color:var(--lime);font-size:20px}.logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:white;font-size:11px;font-weight:900}.m{background:var(--fb)}.msg{background:linear-gradient(135deg,#00b2ff,#7360f2)}.ln{background:var(--line)}.z{background:var(--purple)}.a{background:#f1c96a;color:#19271f}.node b{font-size:15px}.node span{display:block;color:#b6cabf;font-size:11px;margin-top:3px}
-.call{border-left:4px solid var(--g2);background:rgba(13,122,85,.07);padding:12px 14px;border-radius:0 15px 15px 0;color:#294a3c;line-height:1.6}.dark .call{border-color:var(--lime);background:rgba(183,227,110,.08);color:#e3eee8}
-.phone{width:min(350px,100%);margin:auto;background:#0c1511;border-radius:38px;padding:9px;box-shadow:0 28px 80px rgba(0,0,0,.24)}.screen{min-height:570px;background:#f7faf8;border-radius:30px;overflow:hidden;position:relative;color:#16231c}.ptop{height:53px;background:#fff;border-bottom:1px solid #e9efeb;display:flex;gap:9px;align-items:center;padding:0 14px;font-weight:800}.av{width:33px;height:33px;border-radius:50%;background:linear-gradient(135deg,#f1d45e,#7eb16b);display:grid;place-items:center}.chat{display:flex;flex-direction:column;gap:9px;padding:14px}.bubble{max-width:87%;padding:9px 11px;border-radius:15px;font-size:12px;line-height:1.45}.bot{align-self:flex-start;background:#fff;border:1px solid #e7ede9}.usr{align-self:flex-end;background:#dcf4dc}.q{display:flex;flex-wrap:wrap;gap:6px}.q button{border:1px solid #c5ddcd;background:#fff;color:#0b6d4c;border-radius:999px;padding:7px 9px;font-size:10px}.q button.on{background:var(--g);color:#fff}
-.score{display:grid;grid-template-columns:1fr .8fr;gap:20px;align-items:stretch}.choices{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}.choice{border:1px solid #d6e2da;background:#fff;border-radius:999px;padding:8px 11px;font-size:12px;cursor:pointer}.choice.on{background:var(--g);border-color:var(--g);color:#fff}.scorebox{background:#fff;border:1px solid #e1eae4;border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:center}.circle{--p:90%;width:145px;height:145px;border-radius:50%;margin:auto;background:conic-gradient(var(--g2) var(--p),#e6eee8 0);display:grid;place-items:center;position:relative}.circle:before{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:white}.circle b{position:relative;font-size:42px;color:var(--g)}.center{text-align:center}
-.desktop{background:#0d1713;border-radius:24px;padding:8px;box-shadow:0 30px 90px rgba(0,0,0,.2)}.dscreen{background:#f4f7f5;border-radius:17px;overflow:hidden;display:grid;grid-template-columns:245px 1fr 260px;min-height:540px}.side{background:#fff;border-right:1px solid #e4ebe6;padding:12px}.ihead{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}.leaditem{display:grid;grid-template-columns:36px 1fr auto;gap:8px;padding:9px;border-radius:12px;margin-bottom:6px}.leaditem.active{background:#edf7f0;border:1px solid #d6e9dc}.lav{width:36px;height:36px;border-radius:11px;background:#e9efeb;display:grid;place-items:center}.leaditem b{font-size:11px}.leaditem p{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:2px 0 0;color:#75857d}.conv{min-width:0;background:#f8faf8;display:flex;flex-direction:column}.chead{background:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e4ebe6}.ctitle{display:flex;align-items:center;gap:8px}.ctitle span{display:block;color:#78877f;font-size:9px}.cbody{padding:14px;flex:1}.summary{padding:11px;background:#eff9f1;border:1px solid #d4eadb;border-radius:13px;font-size:11px;line-height:1.45;margin-bottom:10px}.composer{background:#fff;border-top:1px solid #e4ebe6;padding:9px;display:flex;gap:7px}.composer input{flex:1;min-width:0;border:1px solid #dbe5de;border-radius:999px;padding:9px}.composer button{border:0;border-radius:999px;background:var(--g);color:#fff;padding:8px 13px}.profile{background:#fff;border-left:1px solid #e4ebe6;padding:13px}.pblock{background:#f6f8f6;border-radius:13px;padding:12px;margin-top:9px}.kv{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed #dde6df;padding:6px 0;font-size:11px}.kv:last-child{border:0}.bscore{font-size:34px;font-weight:900;color:var(--g)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}.actions button{border:1px solid #d8e3dc;background:#fff;border-radius:10px;padding:8px;font-size:10px}.actions .primary{background:var(--g);color:#fff;border-color:var(--g)}
-.stack{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:20px}.stack .card{padding:15px;min-height:125px}.stack i{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;color:#fff;font-style:normal;font-weight:900;font-size:10px;margin-bottom:10px}.stack b{font-size:13px}.stack p{font-size:10px}.cost{width:100%;border-collapse:separate;border-spacing:0 8px;margin-top:12px}.cost th{text-align:left;font-size:10px;color:#75857d;padding:0 11px}.cost td{background:#fff;padding:13px 11px;border-top:1px solid #e4ebe6;border-bottom:1px solid #e4ebe6;font-size:12px}.cost td:first-child{border-left:1px solid #e4ebe6;border-radius:12px 0 0 12px}.cost td:last-child{border-right:1px solid #e4ebe6;border-radius:0 12px 12px 0}.price{font-weight:900;color:var(--g);font-size:16px}.rec td{background:#edf8f0}.budget{display:flex;justify-content:space-between;gap:15px;align-items:center;background:var(--g);color:#fff;padding:18px;border-radius:20px;margin-top:12px}.budget b{font-size:18px}.budget strong{font-size:28px;color:var(--lime);white-space:nowrap}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.phase{background:#fff;border:1px solid #e0e9e3;border-radius:20px;padding:18px}.phase ul{padding-left:18px;color:#607168;font-size:12px;line-height:1.8}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.kpi{padding:17px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11)}.kpi b{font-size:13px}.kpi span{display:block;color:#a7beb3;font-size:10px;margin-top:5px}.no{position:absolute;bottom:16px;left:6vw;color:#82948b;font-size:10px}.dark .no{color:#719083}.proto{text-align:center;margin-top:8px;font-size:9px;color:#87735f}
-.sources{display:grid;grid-template-columns:1fr 1fr;gap:10px}.src{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:13px}.src b{font-size:12px}.src a{color:var(--lime);font-size:10px;word-break:break-word}.src p{font-size:10px;color:#acc1b7;margin:5px 0 7px}
-@media(max-width:1000px){.g2,.score{grid-template-columns:1fr}.g3,.g4,.kpis{grid-template-columns:repeat(2,1fr)}.rail,.stack{grid-template-columns:repeat(2,1fr)}.node:after{display:none}.dscreen{grid-template-columns:210px 1fr}.profile{display:none}}
-@media(max-width:680px){html{scroll-snap-type:none}body{background:var(--paper)}.slide{min-height:auto;align-items:flex-start;padding:76px max(16px,env(safe-area-inset-right)) 48px max(16px,env(safe-area-inset-left));overflow:visible;overflow-x:clip}.top{top:max(7px,env(safe-area-inset-top));left:9px;right:9px}.brand{padding:6px 8px}.brand span{display:none}.tools button{min-height:40px;padding:8px 10px;font-size:10px}.tools button:first-child{display:none}h1{font-size:clamp(37px,11vw,45px);line-height:1.02}h2{font-size:clamp(28px,8.8vw,37px);line-height:1.13}.lead{font-size:16px}.g2,.g3,.g4,.kpis,.timeline,.sources{grid-template-columns:1fr!important;gap:11px}.card{padding:16px;border-radius:18px}.rail,.stack{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:9px;padding:2px 1px 10px;-webkit-overflow-scrolling:touch}.rail>*{flex:0 0 82%;scroll-snap-align:start}.stack>*{flex:0 0 75%;scroll-snap-align:start}.phone{max-width:390px;border-radius:30px;padding:7px}.screen{min-height:530px;border-radius:24px}.score{gap:12px}.scorebox{padding:17px}.desktop{border-radius:20px;padding:6px;margin:0 -4px}.dscreen{display:flex;flex-direction:column;min-height:0}.side{display:block;order:1;border-right:0;border-bottom:1px solid #e4ebe6;overflow-x:auto;white-space:nowrap}.ihead{position:sticky;left:0;background:#fff;width:max-content;min-width:100%;z-index:2}.leaditem{display:inline-grid;width:230px;vertical-align:top;white-space:normal;margin:0 6px 0 0;border:1px solid #e4ebe6}.conv{order:2}.chead{align-items:flex-start;gap:7px}.ctitle{min-width:0}.ctitle>div:last-child{min-width:0}.ctitle span{white-space:normal}.cbody{padding:11px;min-height:350px}.profile{display:none}.cost,.cost tbody,.cost tr,.cost td{display:block;width:100%}.cost thead{display:none}.cost tr{margin-bottom:10px;border:1px solid #e0e9e3;border-radius:14px;overflow:hidden;background:#fff}.cost td,.rec td{border:0!important;border-radius:0!important;background:transparent!important;padding:8px 11px}.cost td+td{border-top:1px dashed #dce5df!important}.cost td:nth-child(2):before{content:"ค่าใช้จ่าย • ";font-size:9px;color:#7c8b83}.cost td:nth-child(3):before{content:"บทบาท";display:block;font-size:9px;color:#7c8b83;margin-bottom:2px}.budget{display:block}.budget strong{display:block;white-space:normal;margin-top:8px;font-size:25px}.phase{padding:16px}.no{left:16px;bottom:11px}.call{font-size:12px}.small{font-size:11px}}
-@media print{.top,.progress{display:none}.slide{min-height:100vh;page-break-after:always}}
+:root{
+  --ink:#17251f;--muted:#5c6d65;--bg:#f5f7f5;--paper:#fff;--line:#dce6df;
+  --green:#087653;--green2:#0d9367;--deep:#0a3025;--deep2:#0d3d2e;--lime:#d9f0a5;
+  --blue:#1268d3;--red:#a72e2b;--amber:#87570f;--soft:#edf5ef;
+  --shadow:0 18px 50px rgba(16,52,38,.10);--radius:22px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;width:100%;max-width:100%;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans Thai",Tahoma,sans-serif;font-size:16px;line-height:1.6}
+main,section,header,footer,div,article,aside,nav{min-width:0}
+h1,h2,h3,p{overflow-wrap:anywhere}
+h1,h2,h3{line-height:1.15;letter-spacing:-.025em}
+a{color:var(--green);text-underline-offset:3px}
+button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible{outline:3px solid #f0bd32;outline-offset:3px}
+.skip{position:absolute;left:8px;top:-80px;z-index:999;background:#fff;color:#111;padding:12px;border-radius:10px}
+.skip:focus{top:8px}
+.container{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(245,247,245,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,60,45,.08)}
+.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;text-decoration:none}
+.mark{width:36px;height:36px;flex:0 0 36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(145deg,var(--green),#18a979);color:#fff;font-size:12px}
+.navlinks{display:flex;align-items:center;gap:4px}
+.navlinks a{min-height:44px;display:flex;align-items:center;padding:0 12px;border-radius:12px;color:#3e554b;text-decoration:none;font-size:13px;font-weight:600}
+.navlinks a:hover{background:#fff}
+.navlinks .cta{background:var(--green);color:#fff}
+.hero{position:relative;overflow:hidden;background:linear-gradient(145deg,#08271e,#0b3a2b 70%,#104b37);color:#fff;padding:78px 0 62px}
+.hero:after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;right:-180px;top:-220px;background:radial-gradient(circle,rgba(217,240,165,.22),transparent 68%)}
+.heroGrid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime);text-transform:uppercase}
+.hero h1{font-size:clamp(46px,6.4vw,78px);margin:12px 0 18px}
+.hero h1 span{color:var(--lime)}
+.heroLead{max-width:700px;color:#d4e3dc;font-size:18px;margin:0 0 24px}
+.heroStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{padding:15px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:rgba(255,255,255,.055)}
+.stat b{display:block;color:var(--lime);font-size:24px;line-height:1.2}
+.stat span{display:block;margin-top:5px;color:#bfd1c8;font-size:11px;line-height:1.45}
+.exec{background:#fff;color:var(--ink);border-radius:26px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.2)}
+.exec small{color:var(--green);font-weight:800;letter-spacing:.06em}
+.exec h2{font-size:26px;margin:7px 0 16px}
+.execList{display:grid;gap:8px}
+.execItem{display:grid;grid-template-columns:38px 1fr;gap:11px;padding:11px;background:#f2f6f3;border-radius:14px}
+.execItem i{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#dfeee4;color:var(--green);font-style:normal;font-weight:900;font-size:12px}
+.execItem b{display:block;font-size:13px}
+.execItem span{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px}
+.section{padding:72px 0}
+.section.white{background:#fff}
+.section.dark{background:var(--deep);color:#fff}
+.sectionHead{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:end;margin-bottom:26px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+.dark .kicker{color:var(--lime)}
+.section h2{font-size:clamp(31px,4vw,50px);margin:6px 0 0}
+.sectionHead p{margin:0;color:var(--muted);font-size:14px}
+.dark .sectionHead p{color:#b9cec4}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:19px}
+.cardNum{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#e6f1e9;color:var(--green);font-size:12px;font-weight:900;margin-bottom:14px}
+.card h3{font-size:18px;margin:0 0 7px}
+.card p{margin:0;color:var(--muted);font-size:12px}
+.takeaway{margin-top:14px;padding:18px 20px;border-radius:18px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff}
+.takeaway b{font-size:17px}
+.takeaway p{margin:4px 0 0;color:#e0eee7;font-size:12px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.flowStep{position:relative;padding:16px;border:1px solid var(--line);border-radius:19px;background:#fff;min-height:145px}
+.flowStep:not(:last-child):after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);z-index:2;color:#7f9b8e;font-weight:800}
+.flowIcon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:10px;font-weight:900;margin-bottom:16px}
+.fb{background:#1877f2}.msg{background:linear-gradient(135deg,#00a9f5,#6f5ee9)}.zwiz{background:#6d58d7}.admin{background:#caa73f;color:#1c2a23}.lineoa{background:#06c755}
+.flowStep b{display:block;font-size:14px}
+.flowStep span{display:block;margin-top:4px;color:var(--muted);font-size:10px;line-height:1.5}
+.demo{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:center}
+.qual{display:grid;gap:9px;margin-top:18px}
+.qualItem{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:13px;border:1px solid var(--line);background:#fff;border-radius:16px}
+.qualItem i{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:#e6f1e9;color:var(--green);font-style:normal;font-weight:900}
+.qualItem b{display:block;font-size:13px}
+.qualItem span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.phone{width:min(360px,100%);margin-inline:auto;padding:8px;background:#101814;border-radius:36px;box-shadow:var(--shadow)}
+.phoneScreen{min-height:570px;background:#f5f7f6;border-radius:29px;overflow:hidden}
+.phoneTop{height:60px;display:flex;align-items:center;gap:10px;padding:0 14px;background:#fff;border-bottom:1px solid var(--line)}
+.avatar{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:grid;place-items:center;background:#dcece1;color:var(--green);font-size:11px;font-weight:900}
+.phoneTop b{display:block;font-size:12px}
+.phoneTop span{display:block;color:var(--muted);font-size:9px}
+.chat{display:flex;flex-direction:column;gap:9px;padding:15px}
+.bubble{max-width:88%;padding:10px 11px;border-radius:15px;font-size:11px;line-height:1.5}
+.bot{align-self:flex-start;background:#fff;border:1px solid var(--line)}
+.user{align-self:flex-end;background:#daf3e2}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{min-height:36px;border:1px solid #bed7c8;background:#fff;color:#126d50;border-radius:999px;padding:7px 9px;font-size:9px}
+.chip.on{background:var(--green);border-color:var(--green);color:#fff}
+.caption{text-align:center;color:#7c8b84;font-size:9px;margin-top:8px}
+.scoreGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:14px}
+.choicePanel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:19px}
+.choiceGroup{margin-bottom:15px}
+.choiceGroup:last-child{margin-bottom:0}
+.choiceGroup>span{display:block;font-size:12px;font-weight:800;margin-bottom:7px}
+.choices{display:flex;flex-wrap:wrap;gap:7px}
+.choice{min-height:44px;border:1px solid #cfddd5;background:#fff;color:#3f584d;border-radius:999px;padding:8px 11px;font-size:11px;cursor:pointer}
+.choice[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.scoreCard{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(150deg,#092b21,#0c4734);color:#fff;border-radius:var(--radius);padding:22px}
+.ring{--p:100%;width:144px;height:144px;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--lime) var(--p),rgba(255,255,255,.12) 0)}
+.ring:after{content:"";position:absolute;width:108px;height:108px;border-radius:50%;background:#0b392b}
+.ring b{position:relative;z-index:1;font-size:42px}
+.scoreCard h3{font-size:21px;margin:13px 0 3px}
+.scoreCard p{margin:0;color:#bfd2c8;font-size:11px}
+.statusText{display:inline-flex;margin-top:11px;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 9px;font-size:10px}
+.adminDesktop{padding:7px;background:#101915;border-radius:24px;box-shadow:var(--shadow)}
+.adminApp{display:grid;grid-template-columns:220px 1fr 230px;min-height:500px;overflow:hidden;background:#f5f7f6;border-radius:18px}
+.leadList,.profile{background:#fff;padding:12px}
+.leadList{border-right:1px solid var(--line)}
+.profile{border-left:1px solid var(--line)}
+.listHead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:9px;font-size:12px;font-weight:800}
+.badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:5px 7px;font-size:9px;font-weight:800}
+.badge.hot{background:#fbe8e7;color:var(--red)}.badge.warm{background:#fff0dc;color:var(--amber)}.badge.source{background:#e8f1ff;color:#165eb6}
+.leadRow{display:grid;grid-template-columns:35px 1fr auto;gap:7px;padding:8px;border-radius:12px;margin-bottom:5px}
+.leadRow.active{background:#edf6ef;border:1px solid #d4e6d9}
+.leadAvatar{width:35px;height:35px;border-radius:10px;background:#e7eee9;display:grid;place-items:center;font-size:10px;font-weight:900}
+.leadRow b{display:block;font-size:9px}
+.leadRow small{display:block;color:#75857d;font-size:8px;margin-top:2px}
+.conversation{display:flex;flex-direction:column}
+.convHead{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:11px;background:#fff;border-bottom:1px solid var(--line)}
+.convHead b{display:block;font-size:10px}
+.convHead small{display:block;color:var(--muted);font-size:8px}
+.convBody{flex:1;padding:13px}
+.summary{padding:11px;border:1px solid #d1e7d7;background:#edf8f0;border-radius:13px;font-size:9px;line-height:1.55;margin-bottom:10px}
+.compose{display:flex;gap:6px;padding:9px;background:#fff;border-top:1px solid var(--line)}
+.compose input{min-width:0;flex:1;border:1px solid var(--line);border-radius:999px;padding:9px;font-size:8px}
+.compose button{border:0;border-radius:999px;background:var(--green);color:#fff;padding:8px 10px;font-size:8px}
+.profile h3{font-size:12px;margin:0 0 8px}
+.bigScore{font-size:34px;color:var(--green);font-weight:900;line-height:1}
+.kv{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:9px}
+.kv:last-child{border:0}
+.adminMobile{display:none}
+.mobileMock{padding:7px;background:#101915;border-radius:26px;box-shadow:var(--shadow)}
+.mobileApp{overflow:hidden;background:#f5f7f6;border-radius:20px}
+.mobileHead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px;background:#fff;border-bottom:1px solid var(--line)}
+.mobileHead b{font-size:13px}
+.priority{padding:12px}
+.priorityLabel{font-size:10px;color:var(--muted);font-weight:800;margin-bottom:7px}
+.hotLead{padding:13px;background:#fff;border:1px solid #d6e4da;border-radius:15px}
+.hotLeadTop{display:grid;grid-template-columns:40px 1fr auto;gap:9px;align-items:center}
+.hotLeadTop .leadAvatar{width:40px;height:40px}
+.hotLeadTop b{display:block;font-size:12px}
+.hotLeadTop small{display:block;color:var(--muted);font-size:9px}
+.mobileSummary{margin-top:10px;padding:11px;background:#edf8f0;border-radius:12px;font-size:10px;line-height:1.55}
+.mobileFacts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}
+.mobileFact{padding:9px;background:#f6f8f6;border-radius:10px}
+.mobileFact span{display:block;color:var(--muted);font-size:8px}
+.mobileFact b{display:block;font-size:10px;margin-top:2px}
+.mobileActions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}
+.mobileActions button{min-height:44px;border-radius:11px;border:1px solid var(--line);background:#fff;font-size:10px;font-weight:800}
+.mobileActions .primary{background:var(--green);border-color:var(--green);color:#fff}
+.queue{margin:0 12px 12px;padding:12px;background:#fff;border-radius:15px}
+.queue b{font-size:11px}
+.queueRow{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #edf1ee;font-size:9px}
+.queueRow:last-child{border:0}
+.channelGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.channel{padding:19px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.channelLabel{display:inline-flex;padding:5px 8px;border-radius:999px;font-size:9px;font-weight:900;margin-bottom:10px}
+.channel h3{font-size:19px;margin:0 0 6px}
+.channel p{margin:0;color:var(--muted);font-size:11px}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tool{padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.toolIcon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:#fff;font-size:9px;font-weight:900;margin-bottom:11px}
+.tool b{display:block;font-size:12px}
+.tool span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.costGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+.prices{display:grid;gap:8px}
+.price{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px;background:#fff;border:1px solid var(--line);border-radius:15px}
+.price.recommended{background:#ecf7ef;border-color:#cbe1d2}
+.price b{display:block;font-size:12px}
+.price span{display:block;color:var(--muted);font-size:9px;margin-top:2px}
+.price strong{text-align:right;color:var(--green);font-size:16px}
+.core{padding:20px;background:linear-gradient(150deg,#0a3025,#0d503a);color:#fff;border-radius:var(--radius)}
+.core small{color:#bcd2c7;font-size:10px}
+.core h3{font-size:18px;margin:5px 0}
+.core .amount{font-size:38px;font-weight:900;color:var(--lime);line-height:1.2;margin:9px 0}
+.core p{margin:0;color:#c9ddd4;font-size:10px}
+.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.phase{padding:17px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);border-radius:18px}
+.phase small{color:var(--lime);font-weight:900}
+.phase h3{font-size:18px;margin:5px 0 9px}
+.phase ul{margin:0;padding-left:18px;color:#bed0c7;font-size:10px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:11px}
+.kpi{padding:13px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.05);border-radius:14px}
+.kpi b{display:block;font-size:11px}
+.kpi span{display:block;color:#a9bfb5;font-size:9px;margin-top:2px}
+.decision{margin-top:14px;padding:19px;background:#fff;color:var(--ink);border-radius:20px}
+.decision h3{font-size:20px;margin:0}
+.decision p{margin:5px 0 0;color:var(--muted);font-size:11px}
+.footer{padding:26px 0;background:#061c15;color:#a9bdb4;font-size:9px}
+.footer b{color:#fff}
+@media(max-width:900px){
+  .heroGrid,.sectionHead,.demo,.scoreGrid,.costGrid{grid-template-columns:1fr}
+  .sectionHead{gap:9px}
+  .grid3{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .flowStep:not(:last-child):after{display:none}
+  .adminApp{grid-template-columns:190px 1fr}.profile{display:none}
+  .roadmap{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  body{font-size:16px}
+  .container{width:calc(100% - 28px)}
+  .nav{min-height:58px}.brand{font-size:12px}.mark{width:32px;height:32px;flex-basis:32px}
+  .navlinks a:not(.cta){display:none}.navlinks .cta{min-height:44px;padding:0 11px;font-size:10px}
+  .hero{padding:48px 0 38px}.heroGrid{gap:22px}
+  .hero h1{font-size:40px;line-height:1.03;margin:10px 0 14px}
+  .heroLead{font-size:14px;line-height:1.65}
+  .heroStats{grid-template-columns:1fr 1fr;gap:8px}.stat{padding:12px}.stat:nth-child(3){grid-column:1/-1}
+  .stat b{font-size:21px}.stat span{font-size:10px}
+  .exec{padding:16px;border-radius:19px}.exec h2{font-size:20px}
+  .execItem{grid-template-columns:34px 1fr;padding:10px}.execItem i{width:34px;height:34px}
+  .section{padding:48px 0}.section h2{font-size:30px}.sectionHead{margin-bottom:18px}.sectionHead p{font-size:12px}
+  .grid3{grid-template-columns:1fr;gap:8px}.card{padding:15px;border-radius:17px}
+  .takeaway{padding:16px;border-radius:16px}
+  .flow{display:grid;grid-template-columns:1fr;gap:8px}
+  .flowStep{min-height:0;display:grid;grid-template-columns:42px 1fr;column-gap:11px;align-items:center;padding:13px}
+  .flowIcon{grid-row:1/3;margin:0}.flowStep b{font-size:13px}.flowStep span{font-size:10px;margin:0}
+  .qual{gap:7px}.qualItem{padding:11px}
+  .phone{border-radius:28px;padding:6px}.phoneScreen{min-height:540px;border-radius:23px}
+  .choices{display:grid;grid-template-columns:1fr}.choice{width:100%;text-align:left;border-radius:12px;padding:10px 12px}
+  .choicePanel{padding:15px;border-radius:17px}.scoreCard{padding:19px;border-radius:17px}
+  .ring{width:126px;height:126px}.ring:after{width:94px;height:94px}.ring b{font-size:36px}
+  .adminDesktop{display:none}.adminMobile{display:block}
+  .mobileFacts{grid-template-columns:1fr 1fr}.mobileActions{grid-template-columns:1fr 1fr}
+  .channelGrid{grid-template-columns:1fr;gap:8px}.channel{padding:16px;border-radius:17px}
+  .tools{grid-template-columns:1fr 1fr;gap:8px}.tool{padding:13px}.tool:nth-child(5),.tool:nth-child(6){grid-column:auto}
+  .price{grid-template-columns:1fr;padding:12px}.price strong{text-align:left;font-size:15px}
+  .core{padding:17px;border-radius:18px}.core .amount{font-size:33px}
+  .kpis{grid-template-columns:1fr 1fr}
+}
+@media(max-width:360px){
+  .container{width:calc(100% - 24px)}
+  .hero h1{font-size:35px}
+  .heroStats,.tools,.kpis,.mobileFacts,.mobileActions{grid-template-columns:1fr}
+  .stat:nth-child(3){grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media print{.topbar,.skip{display:none}.section,.hero{break-inside:avoid}}
 </style>
 </head>
 <body>
-<div class="progress" id="prog"></div>
-<div class="top"><div class="brand"><i>AI</i><span>Dealer Lead System • Executive Proposal</span></div><div class="tools"><button onclick="document.documentElement.requestFullscreen?.()">เต็มจอ</button><button onclick="window.print()">PDF</button></div></div>
+<a class="skip" href="#content">ข้ามไปยังเนื้อหาหลัก</a>
+<header class="topbar" aria-label="เมนูหลัก">
+  <div class="container nav">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true">AI</span><span>Dealer Lead System</span></a>
+    <nav class="navlinks" aria-label="สารบัญ">
+      <a href="#flow">แนวทาง</a><a href="#admin">Admin</a><a href="#cost">ค่าใช้จ่าย</a><a class="cta" href="#pilot">สรุป Pilot</a>
+    </nav>
+  </div>
+</header>
 
-<section class="slide dark"><div class="wrap"><div class="ey">Executive Proposal • Oct 2026</div><div class="g2"><div><h1>AI Dealer<br><span class="accent">Lead System</span></h1><p class="lead">เปลี่ยน Facebook Ads ที่สร้าง “แชทจำนวนมาก” ให้เป็นระบบคัดกรอง <b>คนที่มีโอกาสสมัครเป็นตัวแทนจำหน่ายน้ำมันพืชและสั่งซื้อจริง</b> ก่อนส่งถึง Admin เพียง 1 คน</p><div class="g3"><div class="card"><div class="metric">1 คน</div><p>Admin หลัก</p></div><div class="card"><div class="metric">24/7</div><p>Bot รับและคัดกรอง</p></div><div class="card"><div class="metric">~750฿</div><p>ZWIZ Advanced เฉลี่ย/เดือน*</p></div></div><p class="small">* 8,999 บาท/ปี ตามหน้า Pricing ที่ใช้อ้างอิง ณ วันที่จัดทำ; AI Add-on/ภาษี/LINE package อาจเพิ่มตามการใช้งานจริง</p></div><div><div class="rail"><div class="node"><div class="logo m">META</div><div><b>Facebook Ads</b><span>หาคนสนใจเป็นตัวแทน</span></div></div><div class="node"><div class="logo msg">MSG</div><div><b>Messenger</b><span>รับ Lead จาก Ads</span></div></div><div class="node"><div class="logo ln">LINE</div><div><b>LINE OA</b><span>ดูแลต่อ / ซื้อซ้ำ</span></div></div><div class="node"><div class="logo z">ZWIZ</div><div><b>ZWIZ.AI</b><span>รวมแชท + Flow + AI</span></div></div><div class="node"><div class="logo a">1</div><div><b>Admin</b><span>รับเฉพาะ Lead ที่ควรคุย</span></div></div></div><div class="call" style="margin-top:15px"><b>หลักการ:</b> ใช้ Automation เป็นด่านหน้า ไม่ได้ให้ AI ตัดสินเรื่องราคา เครดิต หรือเงื่อนไขสำคัญแทนคนขาย</div></div></div></div><div class="no">01 / 10</div></section>
+<main id="content">
+<section class="hero" id="top">
+  <div class="container heroGrid">
+    <div>
+      <div class="eyebrow">Executive Proposal · Mobile-first</div>
+      <h1>คัด Lead จาก Ads<br><span>ก่อนถึง Admin</span></h1>
+      <p class="heroLead">เปลี่ยนแชทจำนวนมากจาก Facebook Ads ให้เป็นรายชื่อผู้สนใจที่ถูกคัดกรองแล้ว ก่อนส่งให้ Admin 1 คนคุยเรื่องราคา เงื่อนไข และปิดการขาย</p>
+      <div class="heroStats" aria-label="สรุปตัวเลขสำคัญ">
+        <div class="stat"><b>1 คน</b><span>Admin หลักที่รับช่วง Lead</span></div>
+        <div class="stat"><b>4 ข้อ</b><span>คำถามคัดกรองที่จำเป็น</span></div>
+        <div class="stat"><b>~750฿</b><span>ZWIZ Advanced เฉลี่ย/เดือน*</span></div>
+      </div>
+    </div>
+    <aside class="exec" aria-label="สรุปสำหรับผู้บริหาร">
+      <small>EXECUTIVE TAKEAWAY</small>
+      <h2>เริ่มจากระบบคัด Lead ก่อนลงทุน AI เต็มรูปแบบ</h2>
+      <div class="execList">
+        <div class="execItem"><i aria-hidden="true">01</i><div><b>รวมแชทไว้จุดเดียว</b><span>Messenger + LINE OA ลดการสลับหลายหน้าจอ</span></div></div>
+        <div class="execItem"><i aria-hidden="true">02</i><div><b>คัด Hot / Warm / Cold</b><span>ใช้ประเภทลูกค้า ปริมาณ พื้นที่ และความพร้อมซื้อ</span></div></div>
+        <div class="execItem"><i aria-hidden="true">03</i><div><b>Admin ทำเฉพาะงานที่ต้องใช้คน</b><span>ราคา ต่อรอง เงื่อนไข และปิด First Order</span></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
 
-<section class="slide light"><div class="wrap"><div class="ey">Business Fit</div><h2>ทำไมแนวทางนี้ตรงกับ<br><span class="accent">ธุรกิจตัวแทนน้ำมันพืช</span></h2><p class="lead">โจทย์ของเรายังไม่ใช่ e-commerce เต็มรูปแบบ แต่คือ Lead Generation: ร้านค้า ร้านขายส่ง และบุคคลทั่วไปเห็น Ads แล้วทักเข้ามา ก่อนตัดสินใจรับสินค้าไปจำหน่ายราคาหน้าโรงงาน</p><div class="g3"><div class="card"><h3>① รวม Inbox</h3><p>Messenger + LINE OA เข้าจุดเดียว ลดโอกาสตกหล่นและไม่ต้องสลับหลายหน้าจอ</p></div><div class="card"><h3>② Qualify ก่อน</h3><p>ถามประเภทร้าน จำนวนที่สนใจ จังหวัด และช่วงเวลาที่พร้อมซื้อ ก่อนรบกวน Admin</p></div><div class="card"><h3>③ ส่ง Hot Lead ให้คน</h3><p>Admin ใช้เวลากับคนที่ขอราคา ปริมาณเหมาะสม และมีสัญญาณพร้อมเริ่มขายจริง</p></div></div><div class="call" style="margin-top:16px"><b>สิ่งที่ต้องวัด:</b> Ads → Chat → Qualified → Hot → Quotation → First Order ไม่ใช่วัดแค่จำนวนแชท</div></div><div class="no">02 / 10</div></section>
+<section class="section white">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Business Problem</div><h2>ปัญหาที่เรากำลังแก้</h2></div>
+      <p>ธุรกิจต้องการหาตัวแทนจำหน่ายน้ำมันพืชจาก Ads แต่เมื่อคนทักเข้ามามาก Admin คนเดียวต้องเสียเวลาอ่านทั้งคนที่พร้อมซื้อและคนที่เพียงสอบถามข้อมูล</p>
+    </div>
+    <div class="grid3">
+      <article class="card"><div class="cardNum">01</div><h3>แชทเยอะ ≠ Lead ดี</h3><p>จำนวน Conversation สูงไม่ได้แปลว่าจะเกิดตัวแทนหรือ First Order สูงตาม</p></article>
+      <article class="card"><div class="cardNum">02</div><h3>Admin กลายเป็นคอขวด</h3><p>ต้องตอบคำถามเดิม ๆ และค้นข้อมูลลูกค้าเองก่อนรู้ว่าเคสไหนควรรีบตาม</p></article>
+      <article class="card"><div class="cardNum">03</div><h3>วัดผลไม่ถึงยอดซื้อ</h3><p>ถ้าวัดแค่คนทัก จะยังไม่รู้ว่า Ads ชุดไหนสร้างตัวแทนที่ซื้อจริง</p></article>
+    </div>
+    <div class="takeaway"><b>สิ่งที่ควรเปลี่ยน</b><p>จาก “ตอบทุกแชทให้เร็ว” → “คัดให้รู้ว่าใครควรได้รับเวลาจากฝ่ายขายก่อน”</p></div>
+  </div>
+</section>
 
-<section class="slide soft"><div class="wrap"><div class="ey">Customer Experience Prototype</div><div class="g2"><div><h2>ลูกค้าทักมาแล้ว<br><span class="accent">ระบบคัดกรองให้ทันที</span></h2><p class="lead">ตัวอย่าง Flow ไม่ควรถามยาว แต่ถามเฉพาะข้อมูลที่มีผลต่อโอกาสซื้อจริง 4 เรื่อง</p><div class="g4"><div class="card"><h3>1. ประเภท</h3><p>ร้านขายส่ง / ร้านปลีก / ออนไลน์ / บุคคลทั่วไป</p></div><div class="card"><h3>2. ปริมาณ</h3><p>1–5 / 6–20 / 21–50 / 50+ ลัง</p></div><div class="card"><h3>3. พื้นที่</h3><p>จังหวัด เพื่อคำนวณแนวทางจัดส่งและเขตขาย</p></div><div class="card"><h3>4. Timing</h3><p>ทันที / 7 วัน / 1 เดือน / ศึกษาข้อมูล</p></div></div></div><div><div class="phone"><div class="screen"><div class="ptop"><div class="av">🌾</div><div>สมัครตัวแทนน้ำมันพืช<div class="small">Messenger • จาก Facebook Ads</div></div></div><div class="chat"><div class="bubble usr">สนใจสมัครตัวแทนครับ</div><div class="bubble bot">ยินดีค่ะ ขอข้อมูลสั้น ๆ เพื่อให้ฝ่ายขายเสนอเงื่อนไขได้ตรงนะคะ 😊</div><div class="bubble bot">ลักษณะการจำหน่ายของคุณคือแบบไหนคะ?</div><div class="q"><button class="on">ร้านขายส่ง</button><button>ร้านค้าปลีก</button><button>ออนไลน์</button><button>บุคคลทั่วไป</button></div><div class="bubble bot">สนใจรับสินค้าครั้งแรกประมาณเท่าไรคะ?</div><div class="q"><button>6–20 ลัง</button><button>21–50 ลัง</button><button class="on">50+ ลัง</button></div><div class="bubble usr">ชลบุรี / อยากเริ่มภายใน 7 วันครับ</div><div class="bubble bot">ขอบคุณค่ะ ✅ ข้อมูลเข้าเกณฑ์ เดี๋ยวฝ่ายขายรับช่วงให้ค่ะ</div></div></div></div><div class="proto">Concept Prototype — หน้าตาจริงของผู้ให้บริการอาจต่างออกไป</div></div></div></div><div class="no">03 / 10</div></section>
+<section class="section" id="flow">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Proposed Flow</div><h2>ระบบที่เสนอใน 5 ขั้น</h2></div>
+      <p>ลูกค้าไม่ต้องกรอกฟอร์มยาว และ Admin ไม่ต้องไล่อ่านทุก Conversation เพื่อหา Context เอง</p>
+    </div>
+    <div class="flow" aria-label="ลำดับการทำงาน">
+      <div class="flowStep"><div class="flowIcon fb">ADS</div><b>Facebook Ads</b><span>หากลุ่มร้านค้าและผู้สนใจเป็นตัวแทน</span></div>
+      <div class="flowStep"><div class="flowIcon msg">MSG</div><b>Messenger</b><span>รับ Lead จาก Click-to-Message</span></div>
+      <div class="flowStep"><div class="flowIcon zwiz">ZWIZ</div><b>Qualification</b><span>ถาม 4 ข้อ + Tag + จัดลำดับ Lead</span></div>
+      <div class="flowStep"><div class="flowIcon admin">1</div><b>Admin</b><span>รับ Hot/Warm พร้อมข้อมูลที่จำเป็น</span></div>
+      <div class="flowStep"><div class="flowIcon lineoa">LINE</div><b>LINE OA</b><span>ดูแลตัวแทน ราคา โปร และซื้อซ้ำ</span></div>
+    </div>
+  </div>
+</section>
 
-<section class="slide light"><div class="wrap"><div class="ey">Interactive Lead Qualification</div><h2>ให้ระบบจัดลำดับความสำคัญ<br><span class="accent">ก่อน Admin เปิดอ่านทุกแชท</span></h2><div class="score"><div class="card"><h3>ลองเลือกข้อมูล Lead</h3><p class="small">ตัวอย่างคะแนนเพื่อสื่อหลักการ สามารถปรับหลังมีข้อมูล First Order จริง</p><p><b>ประเภทธุรกิจ</b></p><div class="choices" data-g><button class="choice on" data-s="30">ร้านขายส่ง +30</button><button class="choice" data-s="25">ร้านค้าปลีก +25</button><button class="choice" data-s="10">ออนไลน์ +10</button><button class="choice" data-s="5">ทั่วไป +5</button></div><p><b>ปริมาณครั้งแรก</b></p><div class="choices" data-g><button class="choice" data-s="10">6–20 +10</button><button class="choice" data-s="25">21–50 +25</button><button class="choice on" data-s="30">50+ +30</button></div><p><b>ความพร้อม</b></p><div class="choices" data-g><button class="choice on" data-s="25">≤ 7 วัน +25</button><button class="choice" data-s="10">≤ 1 เดือน +10</button><button class="choice" data-s="0">ศึกษาข้อมูล</button></div><p><b>Intent</b></p><div class="choices" data-g><button class="choice on" data-s="15">ขอราคา +15</button><button class="choice" data-s="5">ขอรายละเอียด +5</button></div></div><div class="scorebox"><div class="circle" id="circle"><b id="score">100</b></div><div class="center"><h3 id="status" style="margin-top:14px;color:#b42e2b">🔥 HOT LEAD</h3><p class="small" id="reason">พร้อมซื้อหลายสัญญาณ ควรแจ้ง Admin ทันที</p><span class="pill hot" id="action">Admin รับช่วง ≤ 15 นาที</span></div></div></div></div><div class="no">04 / 10</div></section>
+<section class="section white">
+  <div class="container demo">
+    <div>
+      <div class="kicker">Customer Experience</div>
+      <h2>ลูกค้าเจอคำถามสั้น ๆ ไม่ใช่แบบฟอร์มยาว</h2>
+      <div class="qual">
+        <div class="qualItem"><i>1</i><div><b>ขายในรูปแบบไหน?</b><span>ร้านขายส่ง / ร้านค้าปลีก / ออนไลน์ / บุคคลทั่วไป</span></div></div>
+        <div class="qualItem"><i>2</i><div><b>สนใจครั้งแรกเท่าไร?</b><span>6–20 / 21–50 / 50+ ลัง</span></div></div>
+        <div class="qualItem"><i>3</i><div><b>อยู่จังหวัดอะไร?</b><span>ใช้ประกอบการดูเขตขายและการจัดส่ง</span></div></div>
+        <div class="qualItem"><i>4</i><div><b>พร้อมเริ่มเมื่อไร?</b><span>7 วัน / 1 เดือน / กำลังศึกษาข้อมูล</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="phone" aria-label="ตัวอย่างหน้าจอ Messenger">
+        <div class="phoneScreen">
+          <div class="phoneTop"><div class="avatar">DP</div><div><b>สมัครตัวแทนน้ำมันพืช</b><span>Messenger · จาก Facebook Ads</span></div></div>
+          <div class="chat">
+            <div class="bubble user">สนใจสมัครตัวแทนครับ</div>
+            <div class="bubble bot">ยินดีค่ะ ขอข้อมูลสั้น ๆ เพื่อให้ฝ่ายขายแนะนำเงื่อนไขได้ตรงนะคะ</div>
+            <div class="bubble bot">ปัจจุบันขายในรูปแบบไหนคะ?</div>
+            <div class="chips"><span class="chip on">ร้านขายส่ง</span><span class="chip">ร้านค้าปลีก</span><span class="chip">ออนไลน์</span></div>
+            <div class="bubble bot">ครั้งแรกสนใจประมาณเท่าไรคะ?</div>
+            <div class="chips"><span class="chip">6–20 ลัง</span><span class="chip">21–50 ลัง</span><span class="chip on">50+ ลัง</span></div>
+            <div class="bubble user">ชลบุรี / อยากเริ่มภายใน 7 วันครับ</div>
+            <div class="bubble bot">รับข้อมูลแล้วค่ะ ฝ่ายขายจะรับช่วงเรื่องราคาและการจัดส่งให้ค่ะ</div>
+          </div>
+        </div>
+      </div>
+      <div class="caption">Concept Prototype — ใช้สื่อ Workflow ไม่ใช่ Screenshot UI จริงของผู้ให้บริการ</div>
+    </div>
+  </div>
+</section>
 
-<section class="slide soft"><div class="wrap"><div class="ey">Admin Screen Prototype</div><h2>Admin 1 คนเห็น<br><span class="accent">Inbox เดียว + Context พร้อมขาย</span></h2><p class="lead">แทนที่จะอ่านย้อนหลังทุกข้อความ ระบบควรสรุป Source, ประเภทลูกค้า, ปริมาณ, พื้นที่, Timing และ Lead Score ให้ก่อน</p><div class="desktop"><div class="dscreen"><div class="side"><div class="ihead"><b>Unified Inbox</b><span class="pill hot">5 Hot</span></div><div class="leaditem active"><div class="lav">ส</div><div><b>สมชาย ค้าส่ง</b><p>50+ ลัง • ชลบุรี • 7 วัน</p></div><span class="pill hot">95</span></div><div class="leaditem"><div class="lav">พ</div><div><b>พรทิพย์ มินิมาร์ท</b><p>21–50 ลัง • ระยอง</p></div><span class="pill warm">W</span></div><div class="leaditem"><div class="lav">น</div><div><b>นัท ออนไลน์</b><p>6–20 ลัง • กรุงเทพฯ</p></div><span class="pill warm">W</span></div><div class="leaditem"><div class="lav">อ</div><div><b>อร บุคคลทั่วไป</b><p>1–5 ลัง • ยังไม่พร้อม</p></div><span class="pill cold">C</span></div></div><div class="conv"><div class="chead"><div class="ctitle"><div class="av">ส</div><div><b>สมชาย ค้าส่ง</b><span>Facebook Messenger • Ads: Dealer-East</span></div></div><span class="pill hot">🔥 HOT 95</span></div><div class="cbody"><div class="summary"><b>AI Summary</b><br>ร้านขายส่งในชลบุรี สนใจ 50+ ลัง ต้องการเริ่มภายใน 7 วัน และขอราคาตัวแทนพร้อมเงื่อนไขขนส่ง</div><div class="bubble usr">สนใจสมัครตัวแทนครับ</div><div class="bubble bot">ขอข้อมูลสั้น ๆ 4 ข้อเพื่อคัดเงื่อนไขให้ตรงนะคะ</div><div class="bubble usr">ขายส่ง / 50+ ลัง / ชลบุรี / 7 วัน</div><div class="bubble bot">✅ เข้าเกณฑ์ แจ้งฝ่ายขายรับช่วงแล้วค่ะ</div></div><div class="composer"><input value="สวัสดีครับ ผมฝ่ายขาย เห็นว่าคุณสนใจรับ 50+ ลัง..."><button>ส่ง</button></div></div><div class="profile"><h3>Lead Profile</h3><div class="pblock"><div class="bscore">95</div><span class="pill fb">Messenger</span><div class="kv"><span>ประเภท</span><b>ร้านขายส่ง</b></div><div class="kv"><span>ปริมาณ</span><b>50+ ลัง</b></div><div class="kv"><span>จังหวัด</span><b>ชลบุรี</b></div><div class="kv"><span>Timing</span><b>≤ 7 วัน</b></div></div><div class="actions"><button class="primary">รับเคส</button><button>ส่งราคา</button><button>Follow-up</button><button>ย้ายไป LINE</button></div></div></div></div><div class="proto">บนมือถือ: รายชื่อ Lead ปัดซ้าย-ขวา แล้ว Conversation อยู่ด้านล่าง ไม่ต้องซูม</div></div><div class="no">05 / 10</div></section>
+<section class="section">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Lead Priority</div><h2>ระบบช่วยบอกว่าใครควรคุยก่อน</h2></div>
+      <p>ตัวอย่างคะแนนนี้มีไว้สื่อหลักการ หลัง Pilot ต้องปรับจากข้อมูล Quotation และ First Order จริง ไม่ควรใช้เป็นสูตรถาวรตั้งแต่วันแรก</p>
+    </div>
+    <div class="scoreGrid">
+      <div class="choicePanel">
+        <div class="choiceGroup"><span>ประเภทธุรกิจ</span><div class="choices" data-group><button class="choice" aria-pressed="true" data-score="30">ร้านขายส่ง +30</button><button class="choice" aria-pressed="false" data-score="25">ร้านค้าปลีก +25</button><button class="choice" aria-pressed="false" data-score="8">บุคคลทั่วไป +8</button></div></div>
+        <div class="choiceGroup"><span>ปริมาณครั้งแรก</span><div class="choices" data-group><button class="choice" aria-pressed="false" data-score="12">6–20 ลัง +12</button><button class="choice" aria-pressed="false" data-score="25">21–50 ลัง +25</button><button class="choice" aria-pressed="true" data-score="30">50+ ลัง +30</button></div></div>
+        <div class="choiceGroup"><span>ความพร้อมซื้อ</span><div class="choices" data-group><button class="choice" aria-pressed="true" data-score="25">ภายใน 7 วัน +25</button><button class="choice" aria-pressed="false" data-score="10">ภายใน 1 เดือน +10</button><button class="choice" aria-pressed="false" data-score="0">ศึกษาข้อมูล</button></div></div>
+        <div class="choiceGroup"><span>Intent</span><div class="choices" data-group><button class="choice" aria-pressed="true" data-score="15">ขอราคา +15</button><button class="choice" aria-pressed="false" data-score="5">ขอข้อมูล +5</button></div></div>
+      </div>
+      <div class="scoreCard" aria-live="polite">
+        <div class="ring" id="ring"><b id="score">100</b></div>
+        <h3 id="status">HOT LEAD</h3>
+        <p id="reason">มีหลายสัญญาณพร้อมซื้อ ควรให้ Admin รับช่วงก่อน</p>
+        <span class="statusText" id="next">ลำดับงาน: ติดต่อก่อน</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="slide light"><div class="wrap"><div class="ey">Channel Strategy</div><div class="g2"><div><h2>Messenger หา Lead<br><span class="accent">LINE OA เลี้ยงตัวแทนระยะยาว</span></h2><p class="lead">ไม่จำเป็นต้องบังคับทุกคน Add LINE ตั้งแต่แรก ให้ย้ายเฉพาะคนที่ผ่าน Qualification หรือเข้าสู่ขั้นราคา/สั่งซื้อ</p><div class="g2" style="grid-template-columns:1fr 1fr;gap:11px"><div class="card"><span class="pill fb">Acquisition</span><h3 style="margin-top:9px">Facebook / Messenger</h3><p>Ads → Chat → Qualify → รู้ Source → ส่ง Hot Lead ให้ Admin</p></div><div class="card"><span class="pill line">Retention</span><h3 style="margin-top:9px">LINE OA</h3><p>ราคาตัวแทน • โปรโมชั่น • สั่งซ้ำ • สถานะจัดส่ง • ติดต่อฝ่ายขาย</p></div></div><div class="call" style="margin-top:15px"><b>ผลที่ต้องการ:</b> ฐานเพื่อน LINE มีคุณภาพขึ้น เพราะเน้นผู้ที่ผ่านการคัดกรองแล้ว</div></div><div><div class="phone"><div class="screen"><div class="ptop" style="background:#06c755;color:#fff"><div class="av">🌾</div><div>ตัวแทนน้ำมันพืช<div style="font-size:9px;opacity:.85">LINE Official Account</div></div></div><div class="chat"><div class="bubble bot">ยินดีต้อนรับเข้าสู่ LINE สำหรับตัวแทนค่ะ ✅</div><div class="bubble bot">ดูราคาตัวแทน โปรโมชั่น และติดต่อฝ่ายขายได้จากเมนู</div><div class="bubble usr">ขอราคาสำหรับ 100 ลังครับ</div><div class="bubble bot">รับเรื่องแล้วค่ะ ฝ่ายขายจะตรวจเงื่อนไขพื้นที่และจัดส่งก่อนยืนยันราคา</div></div><div style="position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid #e6ece8;font-size:10px;text-align:center"><div style="padding:11px">💰<br>ราคา</div><div style="padding:11px">🛒<br>สั่งสินค้า</div><div style="padding:11px">👩‍💼<br>ฝ่ายขาย</div><div style="padding:11px">🎁<br>โปรโมชั่น</div><div style="padding:11px">🚚<br>จัดส่ง</div><div style="padding:11px">📄<br>เงื่อนไข</div></div></div></div></div></div></div><div class="no">06 / 10</div></section>
+<section class="section white" id="admin">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Admin Experience</div><h2>Admin เห็น “สิ่งที่ต้องตัดสินใจ” ทันที</h2></div>
+      <p>หน้าจอไม่ควรโชว์ข้อมูลเยอะเพียงเพราะมีข้อมูล แต่ต้องตอบ 4 คำถาม: ลูกค้าเป็นใคร? มาจากไหน? ต้องการเท่าไร? และเราควรทำอะไรต่อ?</p>
+    </div>
 
-<section class="slide soft"><div class="wrap"><div class="ey">Recommended Tool Stack</div><h2>ใช้ของสำเร็จรูปก่อน<br><span class="accent">ไม่สร้าง Custom System ตั้งแต่ Day 1</span></h2><p class="lead">พิสูจน์ Funnel ก่อน แล้วค่อยเพิ่ม Generative AI, ERP หรือ Marketplace เมื่อเกิดความจำเป็นจริง</p><div class="stack"><div class="card"><i style="background:#1877f2">ADS</i><b>Meta Ads</b><p>สร้าง Demand และ Click-to-Message</p></div><div class="card"><i style="background:linear-gradient(135deg,#00b2ff,#7360f2)">MSG</i><b>Messenger</b><p>รับ Lead หลักจาก Ads</p></div><div class="card"><i style="background:#06c755">LINE</i><b>LINE OA</b><p>Qualified Dealer + Reorder</p></div><div class="card"><i style="background:#6d55df">ZWIZ</i><b>ZWIZ Advanced</b><p>Unified Inbox + Flow + Follow-up</p></div><div class="card"><i style="background:#0d7a55">FLOW</i><b>Qualification</b><p>Tag + Score + Handoff + Summary</p></div><div class="card"><i style="background:#d5a33e">1</i><b>Admin</b><p>ราคา • ต่อรอง • ปิด Order • Outcome</p></div></div><div class="g3" style="margin-top:15px"><div class="card"><h3>Phase 1</h3><p>Flow + Tag + Follow-up ยังไม่ต้องซื้อ GenAI หากคำถามยังตรงไปตรงมา</p></div><div class="card"><h3>Phase 2</h3><p>เพิ่ม ZPT/AI เพื่อ FAQ จาก Product/Policy เมื่อพบคำถามซ้ำจริง</p></div><div class="card"><h3>Phase 3</h3><p>ต่อ ERP / Order / Marketplace เมื่อธุรกิจมีช่องทางและข้อมูลมากขึ้น</p></div></div></div><div class="no">07 / 10</div></section>
+    <div class="adminDesktop" aria-label="ตัวอย่างหน้าจอ Admin บนคอมพิวเตอร์">
+      <div class="adminApp">
+        <div class="leadList">
+          <div class="listHead"><span>Unified Inbox</span><span class="badge hot">● 5 HOT</span></div>
+          <div class="leadRow active"><div class="leadAvatar">ส</div><div><b>สมชาย ค้าส่ง</b><small>50+ ลัง · ชลบุรี</small></div><span class="badge hot">HOT</span></div>
+          <div class="leadRow"><div class="leadAvatar">พ</div><div><b>พรทิพย์ มินิมาร์ท</b><small>21–50 ลัง · ระยอง</small></div><span class="badge warm">WARM</span></div>
+          <div class="leadRow"><div class="leadAvatar">น</div><div><b>นัท ออนไลน์</b><small>6–20 ลัง · กรุงเทพฯ</small></div><span class="badge warm">WARM</span></div>
+        </div>
+        <div class="conversation">
+          <div class="convHead"><div><b>สมชาย ค้าส่ง</b><small>Messenger · Ads: Dealer-East</small></div><span class="badge hot">● HOT 95</span></div>
+          <div class="convBody">
+            <div class="summary"><b>Lead Summary</b><br>ร้านขายส่งในชลบุรี · สนใจ 50+ ลัง · พร้อมเริ่มภายใน 7 วัน · ขอราคาตัวแทนและเงื่อนไขจัดส่ง</div>
+            <div class="bubble user">สนใจสมัครตัวแทนครับ</div>
+            <div class="bubble bot">รับข้อมูลแล้วค่ะ ฝ่ายขายจะรับช่วงต่อให้ค่ะ</div>
+          </div>
+          <div class="compose"><input aria-label="ข้อความตอบลูกค้า" value="สวัสดีครับ ผมฝ่ายขาย เห็นว่าคุณสนใจรับ 50+ ลัง..."><button>ส่ง</button></div>
+        </div>
+        <aside class="profile"><h3>Lead Profile</h3><div class="bigScore">95</div><span class="badge source">Messenger</span><div class="kv"><span>ประเภท</span><b>ร้านขายส่ง</b></div><div class="kv"><span>ปริมาณ</span><b>50+ ลัง</b></div><div class="kv"><span>จังหวัด</span><b>ชลบุรี</b></div><div class="kv"><span>พร้อมเริ่ม</span><b>≤ 7 วัน</b></div></aside>
+      </div>
+    </div>
 
-<section class="slide light"><div class="wrap"><div class="ey">Cost Model</div><h2>ค่าใช้จ่ายเริ่มต้น<br><span class="accent">เน้นจ่ายเฉพาะสิ่งที่พิสูจน์ผลได้</span></h2><div class="g2" style="align-items:start"><div><table class="cost"><thead><tr><th>รายการ</th><th>เริ่มต้น</th><th>บทบาท</th></tr></thead><tbody><tr class="rec"><td><b>ZWIZ Advanced</b></td><td class="price">8,999฿/ปี<br><span class="small">≈ 750฿/เดือน</span></td><td>Facebook / LINE OA • รวมแชท • Flow • Follow-up</td></tr><tr><td><b>LINE OA Free</b></td><td class="price">0฿</td><td>เริ่ม Pilot ก่อน แล้วอัปเกรดเมื่อฐานตัวแทนโต</td></tr><tr><td><b>ZPT / Generative AI</b></td><td class="price">ขอราคา</td><td>เพิ่มเมื่อพบ FAQ ซ้ำและคำนวณ ROI ได้</td></tr><tr><td><b>Meta Ads</b></td><td class="price">งบเดิม</td><td>งบ Acquisition ไม่ใช่ค่า Inbox</td></tr></tbody></table><p class="small">ราคาและเงื่อนไขต้องยืนยันกับผู้ให้บริการก่อนซื้อจริง โดยเฉพาะ AI add-on, VAT และ quota แต่ละช่องทาง</p></div><div><div class="budget"><div><b>Core Software สำหรับ Pilot</b><div class="small" style="color:#dbeae2">ZWIZ Advanced + LINE OA Free</div></div><strong>~750฿/เดือน*</strong></div><div class="card" style="margin-top:11px"><h3>ต้นทุนแฝง</h3><p>ค่าตั้งค่า/Training หากจ้างเพิ่ม • AI Add-on • LINE Broadcast เมื่อฐานโต • งานอัปเดต FAQ/Content • เวลาที่ Admin ต้อง Mark Won/Lost</p></div><div class="card" style="margin-top:11px"><h3>ทำไมยังไม่ซื้อ AI เต็มตั้งแต่วันแรก?</h3><p>Qualification 4 คำถามทำด้วย Flow ได้แม่นและถูกกว่า เมื่อมีแชทจริง 2–4 สัปดาห์จึงรู้ว่า AI ควรช่วยตรงไหน</p></div></div></div></div><div class="no">08 / 10</div></section>
+    <div class="adminMobile" aria-label="ตัวอย่างหน้าจอ Admin บนมือถือ">
+      <div class="mobileMock">
+        <div class="mobileApp">
+          <div class="mobileHead"><b>งานที่ต้องทำตอนนี้</b><span class="badge hot">● 5 HOT</span></div>
+          <div class="priority">
+            <div class="priorityLabel">PRIORITY #1</div>
+            <article class="hotLead">
+              <div class="hotLeadTop"><div class="leadAvatar">ส</div><div><b>สมชาย ค้าส่ง</b><small>Messenger · Dealer-East</small></div><span class="badge hot">● HOT 95</span></div>
+              <div class="mobileSummary"><b>สรุป:</b> ร้านขายส่ง ชลบุรี · 50+ ลัง · พร้อมภายใน 7 วัน · ต้องการราคาและค่าจัดส่ง</div>
+              <div class="mobileFacts"><div class="mobileFact"><span>ประเภท</span><b>ร้านขายส่ง</b></div><div class="mobileFact"><span>ปริมาณ</span><b>50+ ลัง</b></div><div class="mobileFact"><span>พื้นที่</span><b>ชลบุรี</b></div><div class="mobileFact"><span>พร้อมเริ่ม</span><b>≤ 7 วัน</b></div></div>
+              <div class="mobileActions"><button class="primary">รับเคส</button><button>ส่งราคา</button></div>
+            </article>
+          </div>
+          <div class="queue"><b>คิวถัดไป</b><div class="queueRow"><span>พรทิพย์ มินิมาร์ท · ระยอง</span><span>WARM</span></div><div class="queueRow"><span>นัท ออนไลน์ · กรุงเทพฯ</span><span>WARM</span></div></div>
+        </div>
+      </div>
+      <div class="caption">Mobile-first: ไม่มีตารางกว้างและไม่มีรายการที่บังคับปัดแนวนอน</div>
+    </div>
+  </div>
+</section>
 
-<section class="slide dark"><div class="wrap"><div class="ey">30–60–90 Day Roadmap</div><h2>เริ่มเล็ก วัดผลเร็ว<br><span class="accent">แล้วค่อยเพิ่ม AI</span></h2><div class="timeline"><div class="phase"><span class="pill">DAY 1–14</span><h3 style="margin-top:10px">Build Funnel</h3><ul><li>เชื่อม Facebook + LINE OA</li><li>สร้าง 4 Qualification Questions</li><li>ตั้ง Hot/Warm/Cold</li><li>Handoff ให้ Admin 1 คน</li><li>ทดสอบ 20–30 Conversation</li></ul></div><div class="phase"><span class="pill">DAY 15–30</span><h3 style="margin-top:10px">Pilot Ads</h3><ul><li>ใช้ 1–2 Ads ชุด</li><li>วัด Completion / Qualified / Hot</li><li>บันทึก Quotation / First Order</li><li>ปรับคะแนนจากยอดจริง</li></ul></div><div class="phase"><span class="pill">MONTH 2–3</span><h3 style="margin-top:10px">Scale + AI</h3><ul><li>เพิ่ม ZPT สำหรับ FAQ ซ้ำ</li><li>Warm Lead Follow-up</li><li>ย้าย Qualified เข้า LINE OA</li><li>วัด Cost per First Order</li></ul></div></div><div class="kpis"><div class="kpi"><b>Cost / Chat</b><span>Ads ÷ คนเริ่มแชท</span></div><div class="kpi"><b>Qualified Rate</b><span>Qualified ÷ Conversation</span></div><div class="kpi"><b>Quotation Rate</b><span>Quotation ÷ Hot Lead</span></div><div class="kpi"><b>Cost / First Order</b><span>Ads + Platform ÷ First Order</span></div></div><div class="call" style="margin-top:15px"><b>Executive KPI:</b> เป้าหมายไม่ใช่ “Bot ตอบได้เยอะ” แต่คือ Admin ใช้เวลาลดลงและ First Order ต่อเงินโฆษณาดีขึ้น</div></div><div class="no">09 / 10</div></section>
+<section class="section">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Channel Roles</div><h2>แต่ละช่องทางมีหน้าที่ชัดเจน</h2></div>
+      <p>Messenger ใช้หา Lead ใหม่ ส่วน LINE OA ใช้สร้างความสัมพันธ์หลังผ่านการคัดกรองแล้ว เพื่อลดฐานเพื่อนที่ไม่มีคุณภาพ</p>
+    </div>
+    <div class="channelGrid">
+      <article class="channel"><span class="badge source">ACQUISITION</span><h3>Facebook Messenger</h3><p>Ads → เริ่มแชท → Qualification → รู้ Source → ส่ง Hot/Warm ให้ Admin</p></article>
+      <article class="channel"><span class="badge" style="background:#e7faed;color:#08733c">RETENTION</span><h3>LINE Official Account</h3><p>ราคาตัวแทน · โปรโมชั่น · สั่งซ้ำ · สถานะจัดส่ง · ติดต่อฝ่ายขาย</p></article>
+    </div>
+  </div>
+</section>
 
-<section class="slide dark"><div class="wrap"><div class="ey">Decision & Sources</div><div class="g2"><div><h2>ข้อเสนอ: <span class="accent">Pilot 30 วัน</span><br>ก่อนลงทุนระบบใหญ่</h2><p class="lead">เริ่มด้วย ZWIZ Advanced + LINE OA Free, ทำ Dealer Qualification 4 คำถาม, ให้ Admin รับ Hot/Warm ที่สำคัญ และวัดผลถึง First Order</p><div class="g3"><div class="card"><div class="metric">1</div><p>Unified Inbox</p></div><div class="card"><div class="metric">4</div><p>Qualification Questions</p></div><div class="card"><div class="metric">30 วัน</div><p>Pilot ก่อน Scale</p></div></div></div><div><div class="sources"><div class="src"><b>ZWIZ.AI Pricing</b><p>แพ็กเกจและฟีเจอร์ที่ใช้อ้างอิง</p><a href="https://zwiz.ai/th/pricing" target="_blank">zwiz.ai/th/pricing</a></div><div class="src"><b>ZWIZ Chatbot</b><p>Flow / Facebook / LINE / Ads-to-chat</p><a href="https://zwiz.ai/th/chatbot" target="_blank">zwiz.ai/th/chatbot</a></div><div class="src"><b>ZWIZ ZPT</b><p>Generative AI / Knowledge</p><a href="https://www.zwiz.ai/th/businessType/ChatZPT" target="_blank">zwiz.ai/.../ChatZPT</a></div><div class="src"><b>LINE for Business</b><p>LINE OA package</p><a href="https://lineforbusiness.com/th/service/line-oa-features" target="_blank">lineforbusiness.com/.../line-oa-features</a></div></div><div class="call" style="margin-top:14px"><b>หมายเหตุ:</b> หน้าจอใน Presentation เป็น Concept Prototype เพื่อสื่อ Workflow ไม่ใช่ Screenshot UI จริงของ ZWIZ และตัวเลข Funnel เป็นตัวอย่าง ไม่ใช่ Forecast</div></div></div></div><div class="no">10 / 10</div></section>
+<section class="section white">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Tool Stack</div><h2>ใช้เครื่องมืออะไร และทำหน้าที่อะไร</h2></div>
+      <p>เริ่มด้วยระบบสำเร็จรูปก่อน เพื่อพิสูจน์ Funnel แล้วค่อยพิจารณา Generative AI, ERP Integration หรือ Marketplace ภายหลัง</p>
+    </div>
+    <div class="tools">
+      <div class="tool"><div class="toolIcon fb">ADS</div><b>Meta Ads</b><span>สร้าง Demand และ Lead</span></div>
+      <div class="tool"><div class="toolIcon msg">MSG</div><b>Messenger</b><span>รับ Lead จาก Ads</span></div>
+      <div class="tool"><div class="toolIcon zwiz">ZWIZ</div><b>ZWIZ Advanced</b><span>Inbox + Flow + Follow-up</span></div>
+      <div class="tool"><div class="toolIcon" style="background:var(--green)">FLOW</div><b>Lead Scoring</b><span>Tag + Priority + Handoff</span></div>
+      <div class="tool"><div class="toolIcon admin">1</div><b>Admin</b><span>ราคา ต่อรอง ปิด Order</span></div>
+      <div class="tool"><div class="toolIcon lineoa">LINE</div><b>LINE OA</b><span>ดูแล Dealer และซื้อซ้ำ</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cost">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">Cost Model</div><h2>เริ่มต้นเล็ก แล้วเพิ่มเมื่อเห็น ROI</h2></div>
+      <p>ไม่จำเป็นต้องซื้อ Generative AI ตั้งแต่วันแรก เพราะ Qualification 4 ข้อสามารถทำด้วย Flow ได้ตรงกว่าและควบคุมต้นทุนง่ายกว่า</p>
+    </div>
+    <div class="costGrid">
+      <div class="prices">
+        <div class="price recommended"><div><b>ZWIZ Advanced</b><span>Unified Inbox · Flow · Follow-up</span></div><strong>8,999฿/ปี<br><span>≈ 750฿/เดือน</span></strong></div>
+        <div class="price"><div><b>LINE OA Free</b><span>ใช้เริ่ม Pilot</span></div><strong>0฿</strong></div>
+        <div class="price"><div><b>ZPT / Generative AI</b><span>เพิ่มเมื่อรู้ FAQ และ ROI จริง</span></div><strong>ขอราคา</strong></div>
+        <div class="price"><div><b>Meta Ads</b><span>ใช้งบ Acquisition เดิม</span></div><strong>ตามงบ</strong></div>
+      </div>
+      <aside class="core">
+        <small>CORE SOFTWARE FOR PILOT</small>
+        <h3>ZWIZ Advanced + LINE OA Free</h3>
+        <div class="amount">~750฿<small>/เดือน*</small></div>
+        <p>*เฉลี่ยจากแพ็กเกจรายปี ยังไม่รวม VAT, AI Add-on, ค่าตั้งค่า/Training และค่า Broadcast ที่อาจเกิดขึ้นภายหลัง</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="pilot">
+  <div class="container">
+    <div class="sectionHead">
+      <div><div class="kicker">30-Day Pilot</div><h2>สิ่งที่ขออนุมัติจากผู้บริหาร</h2></div>
+      <p>Pilot 30 วันเพื่อพิสูจน์ว่า Lead Quality ดีขึ้น Admin ใช้เวลาน้อยลง และ Ads สามารถสร้าง First Order ได้คุ้มขึ้นหรือไม่</p>
+    </div>
+    <div class="roadmap">
+      <article class="phase"><small>DAY 1–7</small><h3>Setup</h3><ul><li>เชื่อม Messenger + LINE OA</li><li>สร้าง Qualification 4 ข้อ</li><li>ตั้ง Hot / Warm / Cold</li><li>กำหนด Handoff</li></ul></article>
+      <article class="phase"><small>DAY 8–21</small><h3>Run</h3><ul><li>เปิด Ads 1–2 ชุด</li><li>เก็บ Source และ Outcome</li><li>ดู FAQ ที่เกิดซ้ำ</li><li>ปรับ Flow จากข้อมูลจริง</li></ul></article>
+      <article class="phase"><small>DAY 22–30</small><h3>Decide</h3><ul><li>วัด Qualified → Quotation</li><li>วัด Hot → First Order</li><li>วัดเวลาที่ Admin ใช้</li><li>ตัดสินใจเพิ่ม AI หรือไม่</li></ul></article>
+    </div>
+    <div class="kpis"><div class="kpi"><b>Cost / Chat</b><span>ต้นทุนต่อคนเริ่มแชท</span></div><div class="kpi"><b>Qualified Rate</b><span>คุณภาพ Lead</span></div><div class="kpi"><b>Quotation Rate</b><span>Hot Lead ไปถึงราคา</span></div><div class="kpi"><b>Cost / First Order</b><span>KPI หลักของ Pilot</span></div></div>
+    <div class="decision"><h3>ข้อเสนอ: อนุมัติ Pilot 30 วัน</h3><p>เริ่ม ZWIZ Advanced + LINE OA Free ก่อน แล้วใช้ผลจริงเป็นตัวตัดสินว่าจะเพิ่ม Generative AI หรือระบบที่ใหญ่กว่านี้หรือไม่</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container"><b>Dealer Lead System — Executive Proposal</b><br>Concept Prototype สำหรับอธิบายแนวทางเท่านั้น ไม่ใช่ Screenshot UI จริงของ ZWIZ · Lead Score เป็นตัวอย่าง · ราคาและเงื่อนไขควรยืนยันกับผู้ให้บริการก่อนซื้อจริง</div>
+</footer>
 
 <script>
-const prog=document.getElementById('prog');addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;prog.style.width=(m?scrollY/m*100:0)+'%'},{passive:true});
-document.querySelectorAll('.choices').forEach(g=>g.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{g.querySelectorAll('.choice').forEach(x=>x.classList.remove('on'));b.classList.add('on');calc()}));
-function calc(){let n=[...document.querySelectorAll('.choice.on')].reduce((a,b)=>a+Number(b.dataset.s||0),0),p=Math.min(100,Math.round(n/100*100)),s=document.getElementById('status'),r=document.getElementById('reason'),a=document.getElementById('action');document.getElementById('score').textContent=n;document.getElementById('circle').style.setProperty('--p',p+'%');if(n>=70){s.textContent='🔥 HOT LEAD';s.style.color='#b42e2b';r.textContent='พร้อมซื้อหลายสัญญาณ ควรแจ้ง Admin ทันที';a.textContent='Admin รับช่วง ≤ 15 นาที';a.className='pill hot'}else if(n>=40){s.textContent='🟡 WARM LEAD';s.style.color='#9e631d';r.textContent='สนใจจริง แต่ยังต้อง Follow-up หรือให้ข้อมูลเพิ่ม';a.textContent='Bot Follow-up + Admin Queue';a.className='pill warm'}else{s.textContent='⚪ COLD LEAD';s.style.color='#68756f';r.textContent='ยังไม่พร้อมซื้อ ให้ Bot ดูแล FAQ/Retarget';a.textContent='ไม่รบกวน Admin ทันที';a.className='pill cold'}}
-calc();
+document.querySelectorAll('[data-group]').forEach(group=>{
+  group.querySelectorAll('.choice').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      group.querySelectorAll('.choice').forEach(x=>x.setAttribute('aria-pressed','false'));
+      btn.setAttribute('aria-pressed','true');
+      calculate();
+    });
+  });
+});
+function calculate(){
+  const selected=[...document.querySelectorAll('.choice[aria-pressed="true"]')];
+  const total=selected.reduce((sum,b)=>sum+Number(b.dataset.score||0),0);
+  const ring=document.getElementById('ring'),score=document.getElementById('score');
+  const status=document.getElementById('status'),reason=document.getElementById('reason'),next=document.getElementById('next');
+  score.textContent=total; ring.style.setProperty('--p',Math.min(total,100)+'%');
+  if(total>=70){status.textContent='HOT LEAD';reason.textContent='มีหลายสัญญาณพร้อมซื้อ ควรให้ Admin รับช่วงก่อน';next.textContent='ลำดับงาน: ติดต่อก่อน';}
+  else if(total>=40){status.textContent='WARM LEAD';reason.textContent='มีความสนใจ แต่ควร Follow-up หรือให้ข้อมูลเพิ่ม';next.textContent='ลำดับงาน: Follow-up';}
+  else{status.textContent='COLD LEAD';reason.textContent='ยังไม่พร้อมซื้อ ให้ระบบดูแลข้อมูลพื้นฐานต่อ';next.textContent='ลำดับงาน: Automation ดูแล';}
+}
+calculate();
 </script>
-</body></html>
+</body>
+</html>
